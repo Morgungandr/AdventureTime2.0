@@ -421,7 +421,7 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
               <Mapping SourceColumn="idsotrudnik" DataSetColumn="idsotrudnik" />
               <Mapping SourceColumn="idaccount" DataSetColumn="idaccount" />
               <Mapping SourceColumn="idpost" DataSetColumn="idpost" />
-              <Mapping SourceColumn="FIO" DataSetColumn="FIO" />
+              <Mapping SourceColumn="FIO" DataSetColumn="FIO sotr" />
               <Mapping SourceColumn="gender" DataSetColumn="gender" />
               <Mapping SourceColumn="residence" DataSetColumn="residence" />
               <Mapping SourceColumn="passport" DataSetColumn="passport" />
@@ -942,6 +942,41 @@ FROM            Account INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SaleFullTableAdapter" GeneratorDataComponentClassName="SaleFullTableAdapter" Name="SaleFull" UserDataComponentName="SaleFullTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AdvTimeConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tour.idtura, Tour.tourname, Schedule.idschedule, Schedule.dateofdispatch, Schedule.returndate, Skidka.idskidka, Skidka.skidkaname, Sotrudnik.idsotrudnik, Sotrudnik.FIOsotr, Client.idclient, Client.FIO, Sale.idsale, 
+                         Sale.dates
+FROM            Tour INNER JOIN
+                         Schedule ON Tour.idtura = Schedule.idtura CROSS JOIN
+                         Sotrudnik INNER JOIN
+                         Sale ON Sotrudnik.idsotrudnik = Sale.idsotrudnik INNER JOIN
+                         Client ON Sale.idclient = Client.idclient INNER JOIN
+                         Skidka ON Sale.idskidka = Skidka.idskidka</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idtura" DataSetColumn="idtura" />
+              <Mapping SourceColumn="tourname" DataSetColumn="tourname" />
+              <Mapping SourceColumn="idschedule" DataSetColumn="idschedule" />
+              <Mapping SourceColumn="dateofdispatch" DataSetColumn="dateofdispatch" />
+              <Mapping SourceColumn="returndate" DataSetColumn="returndate" />
+              <Mapping SourceColumn="idskidka" DataSetColumn="idskidka" />
+              <Mapping SourceColumn="skidkaname" DataSetColumn="skidkaname" />
+              <Mapping SourceColumn="idsotrudnik" DataSetColumn="idsotrudnik" />
+              <Mapping SourceColumn="FIOsotr" DataSetColumn="FIOsotr" />
+              <Mapping SourceColumn="idclient" DataSetColumn="idclient" />
+              <Mapping SourceColumn="FIO" DataSetColumn="FIO" />
+              <Mapping SourceColumn="idsale" DataSetColumn="idsale" />
+              <Mapping SourceColumn="dates" DataSetColumn="dates" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1128,7 +1163,7 @@ FROM            Account INNER JOIN
               <xs:element name="idsotrudnik" msprop:Generator_ColumnPropNameInTable="idsotrudnikColumn" msprop:Generator_ColumnPropNameInRow="idsotrudnik" msprop:Generator_UserColumnName="idsotrudnik" msprop:Generator_ColumnVarNameInTable="columnidsotrudnik" type="xs:int" />
               <xs:element name="idaccount" msprop:Generator_ColumnPropNameInTable="idaccountColumn" msprop:Generator_ColumnPropNameInRow="idaccount" msprop:Generator_UserColumnName="idaccount" msprop:Generator_ColumnVarNameInTable="columnidaccount" type="xs:int" minOccurs="0" />
               <xs:element name="idpost" msprop:Generator_ColumnPropNameInTable="idpostColumn" msprop:Generator_ColumnPropNameInRow="idpost" msprop:Generator_UserColumnName="idpost" msprop:Generator_ColumnVarNameInTable="columnidpost" type="xs:int" minOccurs="0" />
-              <xs:element name="FIO" msprop:Generator_ColumnPropNameInTable="FIOColumn" msprop:Generator_ColumnPropNameInRow="FIO" msprop:Generator_UserColumnName="FIO" msprop:Generator_ColumnVarNameInTable="columnFIO" minOccurs="0">
+              <xs:element name="FIO_x0020_sotr" msprop:Generator_ColumnPropNameInTable="FIO_sotrColumn" msprop:Generator_ColumnPropNameInRow="FIO_sotr" msprop:Generator_UserColumnName="FIO sotr" msprop:Generator_ColumnVarNameInTable="columnFIO_sotr" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -1670,8 +1705,47 @@ FROM            Account INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable2" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2">
+        <xs:element name="SaleFull" msprop:Generator_RowEvHandlerName="SaleFullRowChangeEventHandler" msprop:Generator_RowDeletedName="SaleFullRowDeleted" msprop:Generator_RowDeletingName="SaleFullRowDeleting" msprop:Generator_RowEvArgName="SaleFullRowChangeEvent" msprop:Generator_TablePropName="SaleFull" msprop:Generator_RowChangedName="SaleFullRowChanged" msprop:Generator_RowChangingName="SaleFullRowChanging" msprop:Generator_TableClassName="SaleFullDataTable" msprop:Generator_RowClassName="SaleFullRow" msprop:Generator_TableVarName="tableSaleFull" msprop:Generator_UserTableName="SaleFull">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idtura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="idtura" msprop:Generator_ColumnPropNameInTable="idturaColumn" msprop:Generator_ColumnVarNameInTable="columnidtura" msprop:Generator_UserColumnName="idtura" type="xs:int" />
+              <xs:element name="tourname" msprop:Generator_ColumnPropNameInRow="tourname" msprop:Generator_ColumnPropNameInTable="tournameColumn" msprop:Generator_ColumnVarNameInTable="columntourname" msprop:Generator_UserColumnName="tourname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idschedule" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="idschedule" msprop:Generator_ColumnPropNameInTable="idscheduleColumn" msprop:Generator_ColumnVarNameInTable="columnidschedule" msprop:Generator_UserColumnName="idschedule" type="xs:int" />
+              <xs:element name="dateofdispatch" msprop:Generator_ColumnPropNameInRow="dateofdispatch" msprop:Generator_ColumnPropNameInTable="dateofdispatchColumn" msprop:Generator_ColumnVarNameInTable="columndateofdispatch" msprop:Generator_UserColumnName="dateofdispatch" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="returndate" msprop:Generator_ColumnPropNameInRow="returndate" msprop:Generator_ColumnPropNameInTable="returndateColumn" msprop:Generator_ColumnVarNameInTable="columnreturndate" msprop:Generator_UserColumnName="returndate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="idskidka" msprop:Generator_ColumnPropNameInRow="idskidka" msprop:Generator_ColumnPropNameInTable="idskidkaColumn" msprop:Generator_ColumnVarNameInTable="columnidskidka" msprop:Generator_UserColumnName="idskidka" type="xs:int" />
+              <xs:element name="skidkaname" msprop:Generator_ColumnPropNameInRow="skidkaname" msprop:Generator_ColumnPropNameInTable="skidkanameColumn" msprop:Generator_ColumnVarNameInTable="columnskidkaname" msprop:Generator_UserColumnName="skidkaname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idsotrudnik" msprop:Generator_ColumnPropNameInRow="idsotrudnik" msprop:Generator_ColumnPropNameInTable="idsotrudnikColumn" msprop:Generator_ColumnVarNameInTable="columnidsotrudnik" msprop:Generator_UserColumnName="idsotrudnik" type="xs:int" />
+              <xs:element name="FIOsotr" msprop:Generator_ColumnPropNameInRow="FIOsotr" msprop:Generator_ColumnPropNameInTable="FIOsotrColumn" msprop:Generator_ColumnVarNameInTable="columnFIOsotr" msprop:Generator_UserColumnName="FIOsotr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idclient" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="idclient" msprop:Generator_ColumnPropNameInTable="idclientColumn" msprop:Generator_ColumnVarNameInTable="columnidclient" msprop:Generator_UserColumnName="idclient" type="xs:int" />
+              <xs:element name="FIO" msprop:Generator_ColumnPropNameInRow="FIO" msprop:Generator_ColumnPropNameInTable="FIOColumn" msprop:Generator_ColumnVarNameInTable="columnFIO" msprop:Generator_UserColumnName="FIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idsale" msprop:Generator_ColumnPropNameInRow="idsale" msprop:Generator_ColumnPropNameInTable="idsaleColumn" msprop:Generator_ColumnVarNameInTable="columnidsale" msprop:Generator_UserColumnName="idsale" type="xs:int" />
+              <xs:element name="dates" msprop:Generator_ColumnPropNameInRow="dates" msprop:Generator_ColumnPropNameInTable="datesColumn" msprop:Generator_ColumnVarNameInTable="columndates" msprop:Generator_UserColumnName="dates" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
@@ -1704,5 +1778,19 @@ FROM            Account INNER JOIN
       <xs:selector xpath=".//mstns:Schedulefull" />
       <xs:field xpath="mstns:idschedule" />
     </xs:unique>
+    <xs:unique name="SaleFull_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SaleFull" />
+      <xs:field xpath="mstns:idtura" />
+      <xs:field xpath="mstns:idschedule" />
+      <xs:field xpath="mstns:idskidka" />
+      <xs:field xpath="mstns:idsotrudnik" />
+      <xs:field xpath="mstns:idclient" />
+      <xs:field xpath="mstns:idsale" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Sale_Client" msdata:parent="SaleFull" msdata:child="Sale" msdata:parentkey="idclient" msdata:childkey="idclient" msprop:Generator_UserParentTable="SaleFull" msprop:Generator_UserChildTable="Sale" msprop:Generator_RelationVarName="relationFK_Sale_Client" msprop:Generator_UserRelationName="FK_Sale_Client" msprop:Generator_ChildPropName="GetSaleRows" msprop:Generator_ParentPropName="SaleFullRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

@@ -32,7 +32,7 @@
         {
         }
 
-        partial class DataTable2DataTable
+        partial class SaleFullDataTable
         {
         }
 

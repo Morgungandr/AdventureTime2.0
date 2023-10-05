@@ -70,7 +70,9 @@ namespace AdventureTime {
         
         private View_11DataTable tableView_11;
         
-        private DataTable2DataTable tableDataTable2;
+        private SaleFullDataTable tableSaleFull;
+        
+        private global::System.Data.DataRelation relationFK_Sale_Client;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -169,8 +171,8 @@ namespace AdventureTime {
                 if ((ds.Tables["View_11"] != null)) {
                     base.Tables.Add(new View_11DataTable(ds.Tables["View_11"]));
                 }
-                if ((ds.Tables["DataTable2"] != null)) {
-                    base.Tables.Add(new DataTable2DataTable(ds.Tables["DataTable2"]));
+                if ((ds.Tables["SaleFull"] != null)) {
+                    base.Tables.Add(new SaleFullDataTable(ds.Tables["SaleFull"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -424,9 +426,9 @@ namespace AdventureTime {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable2DataTable DataTable2 {
+        public SaleFullDataTable SaleFull {
             get {
-                return this.tableDataTable2;
+                return this.tableSaleFull;
             }
         }
         
@@ -566,8 +568,8 @@ namespace AdventureTime {
                 if ((ds.Tables["View_11"] != null)) {
                     base.Tables.Add(new View_11DataTable(ds.Tables["View_11"]));
                 }
-                if ((ds.Tables["DataTable2"] != null)) {
-                    base.Tables.Add(new DataTable2DataTable(ds.Tables["DataTable2"]));
+                if ((ds.Tables["SaleFull"] != null)) {
+                    base.Tables.Add(new SaleFullDataTable(ds.Tables["SaleFull"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -740,12 +742,13 @@ namespace AdventureTime {
                     this.tableView_11.InitVars();
                 }
             }
-            this.tableDataTable2 = ((DataTable2DataTable)(base.Tables["DataTable2"]));
+            this.tableSaleFull = ((SaleFullDataTable)(base.Tables["SaleFull"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable2 != null)) {
-                    this.tableDataTable2.InitVars();
+                if ((this.tableSaleFull != null)) {
+                    this.tableSaleFull.InitVars();
                 }
             }
+            this.relationFK_Sale_Client = this.Relations["FK_Sale_Client"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -802,8 +805,12 @@ namespace AdventureTime {
             base.Tables.Add(this.tableDataTable1);
             this.tableView_11 = new View_11DataTable();
             base.Tables.Add(this.tableView_11);
-            this.tableDataTable2 = new DataTable2DataTable();
-            base.Tables.Add(this.tableDataTable2);
+            this.tableSaleFull = new SaleFullDataTable();
+            base.Tables.Add(this.tableSaleFull);
+            this.relationFK_Sale_Client = new global::System.Data.DataRelation("FK_Sale_Client", new global::System.Data.DataColumn[] {
+                        this.tableSaleFull.idclientColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSale.idclientColumn}, false);
+            this.Relations.Add(this.relationFK_Sale_Client);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -946,7 +953,7 @@ namespace AdventureTime {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDataTable2() {
+        private bool ShouldSerializeSaleFull() {
             return false;
         }
         
@@ -1075,7 +1082,7 @@ namespace AdventureTime {
         public delegate void View_11RowChangeEventHandler(object sender, View_11RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DataTable2RowChangeEventHandler(object sender, DataTable2RowChangeEvent e);
+        public delegate void SaleFullRowChangeEventHandler(object sender, SaleFullRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3005,15 +3012,18 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SaleRow AddSaleRow(int idsale, int idsotrudnik, int idschedule, int idclient, System.DateTime dates, int idskidka) {
+            public SaleRow AddSaleRow(int idsale, int idsotrudnik, int idschedule, SaleFullRow parentSaleFullRowByFK_Sale_Client, System.DateTime dates, int idskidka) {
                 SaleRow rowSaleRow = ((SaleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idsale,
                         idsotrudnik,
                         idschedule,
-                        idclient,
+                        null,
                         dates,
                         idskidka};
+                if ((parentSaleFullRowByFK_Sale_Client != null)) {
+                    columnValuesArray[3] = parentSaleFullRowByFK_Sale_Client[9];
+                }
                 rowSaleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSaleRow);
                 return rowSaleRow;
@@ -3787,7 +3797,7 @@ namespace AdventureTime {
             
             private global::System.Data.DataColumn columnidpost;
             
-            private global::System.Data.DataColumn columnFIO;
+            private global::System.Data.DataColumn columnFIO_sotr;
             
             private global::System.Data.DataColumn columngender;
             
@@ -3860,9 +3870,9 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FIOColumn {
+            public global::System.Data.DataColumn FIO_sotrColumn {
                 get {
-                    return this.columnFIO;
+                    return this.columnFIO_sotr;
                 }
             }
             
@@ -3951,13 +3961,13 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SotrudnikRow AddSotrudnikRow(int idsotrudnik, int idaccount, int idpost, string FIO, string gender, string residence, int passport, int phone, int inn, int snils) {
+            public SotrudnikRow AddSotrudnikRow(int idsotrudnik, int idaccount, int idpost, string FIO_sotr, string gender, string residence, int passport, int phone, int inn, int snils) {
                 SotrudnikRow rowSotrudnikRow = ((SotrudnikRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idsotrudnik,
                         idaccount,
                         idpost,
-                        FIO,
+                        FIO_sotr,
                         gender,
                         residence,
                         passport,
@@ -3989,7 +3999,7 @@ namespace AdventureTime {
                 this.columnidsotrudnik = base.Columns["idsotrudnik"];
                 this.columnidaccount = base.Columns["idaccount"];
                 this.columnidpost = base.Columns["idpost"];
-                this.columnFIO = base.Columns["FIO"];
+                this.columnFIO_sotr = base.Columns["FIO sotr"];
                 this.columngender = base.Columns["gender"];
                 this.columnresidence = base.Columns["residence"];
                 this.columnpassport = base.Columns["passport"];
@@ -4007,8 +4017,8 @@ namespace AdventureTime {
                 base.Columns.Add(this.columnidaccount);
                 this.columnidpost = new global::System.Data.DataColumn("idpost", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidpost);
-                this.columnFIO = new global::System.Data.DataColumn("FIO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFIO);
+                this.columnFIO_sotr = new global::System.Data.DataColumn("FIO sotr", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIO_sotr);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngender);
                 this.columnresidence = new global::System.Data.DataColumn("residence", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4022,7 +4032,7 @@ namespace AdventureTime {
                 this.columnsnils = new global::System.Data.DataColumn("snils", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsnils);
                 this.columnidsotrudnik.AllowDBNull = false;
-                this.columnFIO.MaxLength = 100;
+                this.columnFIO_sotr.MaxLength = 100;
                 this.columngender.MaxLength = 100;
                 this.columnresidence.MaxLength = 100;
             }
@@ -8805,12 +8815,38 @@ namespace AdventureTime {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable2DataTable : global::System.Data.TypedTableBase<DataTable2Row> {
+        public partial class SaleFullDataTable : global::System.Data.TypedTableBase<SaleFullRow> {
+            
+            private global::System.Data.DataColumn columnidtura;
+            
+            private global::System.Data.DataColumn columntourname;
+            
+            private global::System.Data.DataColumn columnidschedule;
+            
+            private global::System.Data.DataColumn columndateofdispatch;
+            
+            private global::System.Data.DataColumn columnreturndate;
+            
+            private global::System.Data.DataColumn columnidskidka;
+            
+            private global::System.Data.DataColumn columnskidkaname;
+            
+            private global::System.Data.DataColumn columnidsotrudnik;
+            
+            private global::System.Data.DataColumn columnFIOsotr;
+            
+            private global::System.Data.DataColumn columnidclient;
+            
+            private global::System.Data.DataColumn columnFIO;
+            
+            private global::System.Data.DataColumn columnidsale;
+            
+            private global::System.Data.DataColumn columndates;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable2DataTable() {
-                this.TableName = "DataTable2";
+            public SaleFullDataTable() {
+                this.TableName = "SaleFull";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -8818,7 +8854,7 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable2DataTable(global::System.Data.DataTable table) {
+            internal SaleFullDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -8835,9 +8871,113 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DataTable2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SaleFullDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idturaColumn {
+                get {
+                    return this.columnidtura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tournameColumn {
+                get {
+                    return this.columntourname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idscheduleColumn {
+                get {
+                    return this.columnidschedule;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dateofdispatchColumn {
+                get {
+                    return this.columndateofdispatch;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn returndateColumn {
+                get {
+                    return this.columnreturndate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idskidkaColumn {
+                get {
+                    return this.columnidskidka;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn skidkanameColumn {
+                get {
+                    return this.columnskidkaname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idsotrudnikColumn {
+                get {
+                    return this.columnidsotrudnik;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FIOsotrColumn {
+                get {
+                    return this.columnFIOsotr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idclientColumn {
+                get {
+                    return this.columnidclient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FIOColumn {
+                get {
+                    return this.columnFIO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idsaleColumn {
+                get {
+                    return this.columnidsale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn datesColumn {
+                get {
+                    return this.columndates;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8851,44 +8991,69 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable2Row this[int index] {
+            public SaleFullRow this[int index] {
                 get {
-                    return ((DataTable2Row)(this.Rows[index]));
+                    return ((SaleFullRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowChanging;
+            public event SaleFullRowChangeEventHandler SaleFullRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowChanged;
+            public event SaleFullRowChangeEventHandler SaleFullRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowDeleting;
+            public event SaleFullRowChangeEventHandler SaleFullRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowDeleted;
+            public event SaleFullRowChangeEventHandler SaleFullRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDataTable2Row(DataTable2Row row) {
+            public void AddSaleFullRow(SaleFullRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable2Row AddDataTable2Row() {
-                DataTable2Row rowDataTable2Row = ((DataTable2Row)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
-                rowDataTable2Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable2Row);
-                return rowDataTable2Row;
+            public SaleFullRow AddSaleFullRow(string tourname, System.DateTime dateofdispatch, System.DateTime returndate, int idskidka, string skidkaname, int idsotrudnik, string FIOsotr, string FIO, int idsale, System.DateTime dates) {
+                SaleFullRow rowSaleFullRow = ((SaleFullRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        tourname,
+                        null,
+                        dateofdispatch,
+                        returndate,
+                        idskidka,
+                        skidkaname,
+                        idsotrudnik,
+                        FIOsotr,
+                        null,
+                        FIO,
+                        idsale,
+                        dates};
+                rowSaleFullRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSaleFullRow);
+                return rowSaleFullRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SaleFullRow FindByidturaidscheduleidskidkaidsotrudnikidclientidsale(int idtura, int idschedule, int idskidka, int idsotrudnik, int idclient, int idsale) {
+                return ((SaleFullRow)(this.Rows.Find(new object[] {
+                            idtura,
+                            idschedule,
+                            idskidka,
+                            idsotrudnik,
+                            idclient,
+                            idsale})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable2DataTable cln = ((DataTable2DataTable)(base.Clone()));
+                SaleFullDataTable cln = ((SaleFullDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -8896,43 +9061,111 @@ namespace AdventureTime {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable2DataTable();
+                return new SaleFullDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnidtura = base.Columns["idtura"];
+                this.columntourname = base.Columns["tourname"];
+                this.columnidschedule = base.Columns["idschedule"];
+                this.columndateofdispatch = base.Columns["dateofdispatch"];
+                this.columnreturndate = base.Columns["returndate"];
+                this.columnidskidka = base.Columns["idskidka"];
+                this.columnskidkaname = base.Columns["skidkaname"];
+                this.columnidsotrudnik = base.Columns["idsotrudnik"];
+                this.columnFIOsotr = base.Columns["FIOsotr"];
+                this.columnidclient = base.Columns["idclient"];
+                this.columnFIO = base.Columns["FIO"];
+                this.columnidsale = base.Columns["idsale"];
+                this.columndates = base.Columns["dates"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnidtura = new global::System.Data.DataColumn("idtura", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidtura);
+                this.columntourname = new global::System.Data.DataColumn("tourname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntourname);
+                this.columnidschedule = new global::System.Data.DataColumn("idschedule", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidschedule);
+                this.columndateofdispatch = new global::System.Data.DataColumn("dateofdispatch", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateofdispatch);
+                this.columnreturndate = new global::System.Data.DataColumn("returndate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreturndate);
+                this.columnidskidka = new global::System.Data.DataColumn("idskidka", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidskidka);
+                this.columnskidkaname = new global::System.Data.DataColumn("skidkaname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnskidkaname);
+                this.columnidsotrudnik = new global::System.Data.DataColumn("idsotrudnik", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidsotrudnik);
+                this.columnFIOsotr = new global::System.Data.DataColumn("FIOsotr", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIOsotr);
+                this.columnidclient = new global::System.Data.DataColumn("idclient", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidclient);
+                this.columnFIO = new global::System.Data.DataColumn("FIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIO);
+                this.columnidsale = new global::System.Data.DataColumn("idsale", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidsale);
+                this.columndates = new global::System.Data.DataColumn("dates", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndates);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidtura,
+                                this.columnidschedule,
+                                this.columnidskidka,
+                                this.columnidsotrudnik,
+                                this.columnidclient,
+                                this.columnidsale}, true));
+                this.columnidtura.AutoIncrement = true;
+                this.columnidtura.AutoIncrementSeed = -1;
+                this.columnidtura.AutoIncrementStep = -1;
+                this.columnidtura.AllowDBNull = false;
+                this.columnidtura.ReadOnly = true;
+                this.columntourname.MaxLength = 100;
+                this.columnidschedule.AutoIncrement = true;
+                this.columnidschedule.AutoIncrementSeed = -1;
+                this.columnidschedule.AutoIncrementStep = -1;
+                this.columnidschedule.AllowDBNull = false;
+                this.columnidschedule.ReadOnly = true;
+                this.columnidskidka.AllowDBNull = false;
+                this.columnskidkaname.MaxLength = 100;
+                this.columnidsotrudnik.AllowDBNull = false;
+                this.columnFIOsotr.MaxLength = 100;
+                this.columnidclient.AutoIncrement = true;
+                this.columnidclient.AutoIncrementSeed = -1;
+                this.columnidclient.AutoIncrementStep = -1;
+                this.columnidclient.AllowDBNull = false;
+                this.columnidclient.ReadOnly = true;
+                this.columnFIO.MaxLength = 100;
+                this.columnidsale.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable2Row NewDataTable2Row() {
-                return ((DataTable2Row)(this.NewRow()));
+            public SaleFullRow NewSaleFullRow() {
+                return ((SaleFullRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable2Row(builder);
+                return new SaleFullRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable2Row);
+                return typeof(SaleFullRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable2RowChanged != null)) {
-                    this.DataTable2RowChanged(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.SaleFullRowChanged != null)) {
+                    this.SaleFullRowChanged(this, new SaleFullRowChangeEvent(((SaleFullRow)(e.Row)), e.Action));
                 }
             }
             
@@ -8940,8 +9173,8 @@ namespace AdventureTime {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable2RowChanging != null)) {
-                    this.DataTable2RowChanging(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.SaleFullRowChanging != null)) {
+                    this.SaleFullRowChanging(this, new SaleFullRowChangeEvent(((SaleFullRow)(e.Row)), e.Action));
                 }
             }
             
@@ -8949,8 +9182,8 @@ namespace AdventureTime {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable2RowDeleted != null)) {
-                    this.DataTable2RowDeleted(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.SaleFullRowDeleted != null)) {
+                    this.SaleFullRowDeleted(this, new SaleFullRowChangeEvent(((SaleFullRow)(e.Row)), e.Action));
                 }
             }
             
@@ -8958,14 +9191,14 @@ namespace AdventureTime {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable2RowDeleting != null)) {
-                    this.DataTable2RowDeleting(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.SaleFullRowDeleting != null)) {
+                    this.SaleFullRowDeleting(this, new SaleFullRowChangeEvent(((SaleFullRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDataTable2Row(DataTable2Row row) {
+            public void RemoveSaleFullRow(SaleFullRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -8992,7 +9225,7 @@ namespace AdventureTime {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable2DataTable";
+                attribute2.FixedValue = "SaleFullDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9856,6 +10089,17 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SaleFullRow SaleFullRow {
+                get {
+                    return ((SaleFullRow)(this.GetParentRow(this.Table.ParentRelations["FK_Sale_Client"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Sale_Client"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsidsotrudnikNull() {
                 return this.IsNull(this.tableSale.idsotrudnikColumn);
             }
@@ -10194,17 +10438,17 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string FIO {
+            public string FIO_sotr {
                 get {
                     try {
-                        return ((string)(this[this.tableSotrudnik.FIOColumn]));
+                        return ((string)(this[this.tableSotrudnik.FIO_sotrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO\' в таблице \'Sotrudnik\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO sotr\' в таблице \'Sotrudnik\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSotrudnik.FIOColumn] = value;
+                    this[this.tableSotrudnik.FIO_sotrColumn] = value;
                 }
             }
             
@@ -10330,14 +10574,14 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFIONull() {
-                return this.IsNull(this.tableSotrudnik.FIOColumn);
+            public bool IsFIO_sotrNull() {
+                return this.IsNull(this.tableSotrudnik.FIO_sotrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFIONull() {
-                this[this.tableSotrudnik.FIOColumn] = global::System.Convert.DBNull;
+            public void SetFIO_sotrNull() {
+                this[this.tableSotrudnik.FIO_sotrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13358,15 +13602,288 @@ namespace AdventureTime {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable2Row : global::System.Data.DataRow {
+        public partial class SaleFullRow : global::System.Data.DataRow {
             
-            private DataTable2DataTable tableDataTable2;
+            private SaleFullDataTable tableSaleFull;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable2Row(global::System.Data.DataRowBuilder rb) : 
+            internal SaleFullRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable2 = ((DataTable2DataTable)(this.Table));
+                this.tableSaleFull = ((SaleFullDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idtura {
+                get {
+                    return ((int)(this[this.tableSaleFull.idturaColumn]));
+                }
+                set {
+                    this[this.tableSaleFull.idturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string tourname {
+                get {
+                    try {
+                        return ((string)(this[this.tableSaleFull.tournameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'tourname\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.tournameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idschedule {
+                get {
+                    return ((int)(this[this.tableSaleFull.idscheduleColumn]));
+                }
+                set {
+                    this[this.tableSaleFull.idscheduleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime dateofdispatch {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSaleFull.dateofdispatchColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'dateofdispatch\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.dateofdispatchColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime returndate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSaleFull.returndateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'returndate\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.returndateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idskidka {
+                get {
+                    return ((int)(this[this.tableSaleFull.idskidkaColumn]));
+                }
+                set {
+                    this[this.tableSaleFull.idskidkaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string skidkaname {
+                get {
+                    try {
+                        return ((string)(this[this.tableSaleFull.skidkanameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'skidkaname\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.skidkanameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idsotrudnik {
+                get {
+                    return ((int)(this[this.tableSaleFull.idsotrudnikColumn]));
+                }
+                set {
+                    this[this.tableSaleFull.idsotrudnikColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FIOsotr {
+                get {
+                    try {
+                        return ((string)(this[this.tableSaleFull.FIOsotrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIOsotr\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.FIOsotrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idclient {
+                get {
+                    return ((int)(this[this.tableSaleFull.idclientColumn]));
+                }
+                set {
+                    this[this.tableSaleFull.idclientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FIO {
+                get {
+                    try {
+                        return ((string)(this[this.tableSaleFull.FIOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.FIOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idsale {
+                get {
+                    return ((int)(this[this.tableSaleFull.idsaleColumn]));
+                }
+                set {
+                    this[this.tableSaleFull.idsaleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime dates {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSaleFull.datesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'dates\' в таблице \'SaleFull\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleFull.datesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstournameNull() {
+                return this.IsNull(this.tableSaleFull.tournameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettournameNull() {
+                this[this.tableSaleFull.tournameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdateofdispatchNull() {
+                return this.IsNull(this.tableSaleFull.dateofdispatchColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdateofdispatchNull() {
+                this[this.tableSaleFull.dateofdispatchColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsreturndateNull() {
+                return this.IsNull(this.tableSaleFull.returndateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetreturndateNull() {
+                this[this.tableSaleFull.returndateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsskidkanameNull() {
+                return this.IsNull(this.tableSaleFull.skidkanameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetskidkanameNull() {
+                this[this.tableSaleFull.skidkanameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFIOsotrNull() {
+                return this.IsNull(this.tableSaleFull.FIOsotrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFIOsotrNull() {
+                this[this.tableSaleFull.FIOsotrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFIONull() {
+                return this.IsNull(this.tableSaleFull.FIOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFIONull() {
+                this[this.tableSaleFull.FIOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdatesNull() {
+                return this.IsNull(this.tableSaleFull.datesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdatesNull() {
+                this[this.tableSaleFull.datesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SaleRow[] GetSaleRows() {
+                if ((this.Table.ChildRelations["FK_Sale_Client"] == null)) {
+                    return new SaleRow[0];
+                }
+                else {
+                    return ((SaleRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Sale_Client"])));
+                }
             }
         }
         
@@ -14156,22 +14673,22 @@ namespace AdventureTime {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DataTable2RowChangeEvent : global::System.EventArgs {
+        public class SaleFullRowChangeEvent : global::System.EventArgs {
             
-            private DataTable2Row eventRow;
+            private SaleFullRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable2RowChangeEvent(DataTable2Row row, global::System.Data.DataRowAction action) {
+            public SaleFullRowChangeEvent(SaleFullRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable2Row Row {
+            public SaleFullRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -16955,7 +17472,7 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
             tableMapping.ColumnMappings.Add("idsotrudnik", "idsotrudnik");
             tableMapping.ColumnMappings.Add("idaccount", "idaccount");
             tableMapping.ColumnMappings.Add("idpost", "idpost");
-            tableMapping.ColumnMappings.Add("FIO", "FIO");
+            tableMapping.ColumnMappings.Add("FIO", "FIO sotr");
             tableMapping.ColumnMappings.Add("gender", "gender");
             tableMapping.ColumnMappings.Add("residence", "residence");
             tableMapping.ColumnMappings.Add("passport", "passport");
@@ -20492,6 +21009,192 @@ FROM            Schedule INNER JOIN
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SaleFullTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public SaleFullTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SaleFull";
+            tableMapping.ColumnMappings.Add("idtura", "idtura");
+            tableMapping.ColumnMappings.Add("tourname", "tourname");
+            tableMapping.ColumnMappings.Add("idschedule", "idschedule");
+            tableMapping.ColumnMappings.Add("dateofdispatch", "dateofdispatch");
+            tableMapping.ColumnMappings.Add("returndate", "returndate");
+            tableMapping.ColumnMappings.Add("idskidka", "idskidka");
+            tableMapping.ColumnMappings.Add("skidkaname", "skidkaname");
+            tableMapping.ColumnMappings.Add("idsotrudnik", "idsotrudnik");
+            tableMapping.ColumnMappings.Add("FIOsotr", "FIOsotr");
+            tableMapping.ColumnMappings.Add("idclient", "idclient");
+            tableMapping.ColumnMappings.Add("FIO", "FIO");
+            tableMapping.ColumnMappings.Add("idsale", "idsale");
+            tableMapping.ColumnMappings.Add("dates", "dates");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AdventureTime.Properties.Settings.Default.AdvTimeConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        Tour.idtura, Tour.tourname, Schedule.idschedule, Schedule.dateofdispatch, Schedule.returndate, Skidka.idskidka, Skidka.skidkaname, Sotrudnik.idsotrudnik, Sotrudnik.FIOsotr, Client.idclient, Client.FIO, Sale.idsale, 
+                         Sale.dates
+FROM            Tour INNER JOIN
+                         Schedule ON Tour.idtura = Schedule.idtura CROSS JOIN
+                         Sotrudnik INNER JOIN
+                         Sale ON Sotrudnik.idsotrudnik = Sale.idsotrudnik INNER JOIN
+                         Client ON Sale.idclient = Client.idclient INNER JOIN
+                         Skidka ON Sale.idskidka = Skidka.idskidka";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AdvTimeDataSet.SaleFullDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AdvTimeDataSet.SaleFullDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AdvTimeDataSet.SaleFullDataTable dataTable = new AdvTimeDataSet.SaleFullDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20929,15 +21632,6 @@ FROM            Schedule INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(AdvTimeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._accountTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Account.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._accountTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._operatorsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Operators.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -21073,6 +21767,15 @@ FROM            Schedule INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._accountTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Account.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._accountTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -21083,14 +21786,6 @@ FROM            Schedule INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(AdvTimeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._accountTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Account.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._accountTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._operatorsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Operators.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -21211,6 +21906,14 @@ FROM            Schedule INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._accountTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Account.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._accountTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -21221,6 +21924,14 @@ FROM            Schedule INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(AdvTimeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._accountTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Account.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._accountTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._view_11TableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.View_11.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -21338,14 +22049,6 @@ FROM            Schedule INNER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._operatorsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._accountTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Account.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._accountTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

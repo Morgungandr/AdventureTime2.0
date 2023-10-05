@@ -16,5 +16,15 @@ namespace AdventureTime
         {
             InitializeComponent();
         }
+
+        private void sales_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet.SaleFull". При необходимости она может быть перемещена или удалена.
+            this.saleFullTableAdapter.Fill(this.advTimeDataSet.SaleFull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet.Account". При необходимости она может быть перемещена или удалена.
+            this.accountTableAdapter.Fill(this.advTimeDataSet.Account);
+            
+
+        }
     }
 }
