@@ -126,6 +126,12 @@
     <Compile Include="NewPit.Designer.cs">
       <DependentUpon>NewPit.cs</DependentUpon>
     </Compile>
+    <Compile Include="newsale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newsale.Designer.cs">
+      <DependentUpon>newsale.cs</DependentUpon>
+    </Compile>
     <Compile Include="newschedul.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewPit.resx">
       <DependentUpon>NewPit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newsale.resx">
+      <DependentUpon>newsale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newschedul.resx">
       <DependentUpon>newschedul.cs</DependentUpon>

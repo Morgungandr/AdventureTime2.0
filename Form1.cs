@@ -81,6 +81,12 @@ namespace AdventureTime
             Schedule clientsform = new Schedule();
             clientsform.ShowDialog();
         }
+
+        private void salebutton_Click(object sender, EventArgs e)
+        {
+            sales clientsform = new sales();
+            clientsform.ShowDialog();
+        }
     }
     public static class LoggedUser
     {

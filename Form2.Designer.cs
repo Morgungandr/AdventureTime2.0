@@ -65,6 +65,7 @@
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(146, 20);
             this.loginBox.TabIndex = 2;
+            this.loginBox.TextChanged += new System.EventHandler(this.loginBox_TextChanged);
             // 
             // passwordBox
             // 

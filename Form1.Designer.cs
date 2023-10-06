@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.salebutton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.EditClientButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -55,7 +57,6 @@
             this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
             this.salesViewTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SalesViewTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -76,6 +77,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer1.Panel1.Controls.Add(this.salebutton);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.EditClientButton);
@@ -87,6 +89,30 @@
             this.splitContainer1.Size = new System.Drawing.Size(1085, 476);
             this.splitContainer1.SplitterDistance = 28;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // salebutton
+            // 
+            this.salebutton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.salebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salebutton.Location = new System.Drawing.Point(300, 3);
+            this.salebutton.Name = "salebutton";
+            this.salebutton.Size = new System.Drawing.Size(93, 23);
+            this.salebutton.TabIndex = 4;
+            this.salebutton.Text = "Продажа";
+            this.salebutton.UseVisualStyleBackColor = false;
+            this.salebutton.Click += new System.EventHandler(this.salebutton_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(201, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Расписание";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -176,6 +202,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.expr1DataGridViewTextBoxColumn,
@@ -207,7 +234,7 @@
             // 
             // expr1DataGridViewTextBoxColumn
             // 
-            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1";
+            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "FIOsotr";
             this.expr1DataGridViewTextBoxColumn.HeaderText = "Сотрудник";
             this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
             this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
@@ -304,22 +331,11 @@
             // 
             this.salesViewTableAdapter1.ClearBeforeFill = true;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(201, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Расписание";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1085, 476);
             this.Controls.Add(this.splitContainer1);
             this.MainMenuStrip = this.menuStrip1;
@@ -349,6 +365,15 @@
         private AdvTimeDataSet advTimeDataSet;
         private AdvTimeDataSetTableAdapters.SalesViewTableAdapter salesViewTableAdapter1;
         private System.Windows.Forms.Button EditClientButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem турыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem питаниеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem видыТуровToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem операторыToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
@@ -361,15 +386,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departurecityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem турыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem питаниеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem видыТуровToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem операторыToolStripMenuItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button salebutton;
     }
 }
 

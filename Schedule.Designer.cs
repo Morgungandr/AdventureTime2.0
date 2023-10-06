@@ -32,12 +32,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.newschedulebutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.schedulefullBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
-            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.scheduleTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.ScheduleTableAdapter();
-            this.schedulefullTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.SchedulefullTableAdapter();
-            this.advTimeDataSet2 = new AdventureTime.AdvTimeDataSet();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tournameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,11 +46,17 @@
             this.pitaniatipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vidturanameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schedulefullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.advTimeDataSet2 = new AdventureTime.AdvTimeDataSet();
+            this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
+            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scheduleTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.ScheduleTableAdapter();
+            this.schedulefullTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.SchedulefullTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulefullBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -104,34 +104,6 @@
             this.button1.Text = "Редактировать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // schedulefullBindingSource
-            // 
-            this.schedulefullBindingSource.DataMember = "Schedulefull";
-            this.schedulefullBindingSource.DataSource = this.advTimeDataSet2;
-            // 
-            // advTimeDataSet1
-            // 
-            this.advTimeDataSet1.DataSetName = "AdvTimeDataSet";
-            this.advTimeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // scheduleBindingSource
-            // 
-            this.scheduleBindingSource.DataMember = "Schedulefull";
-            this.scheduleBindingSource.DataSource = this.advTimeDataSet2;
-            // 
-            // scheduleTableAdapter
-            // 
-            this.scheduleTableAdapter.ClearBeforeFill = true;
-            // 
-            // schedulefullTableAdapter
-            // 
-            this.schedulefullTableAdapter.ClearBeforeFill = true;
-            // 
-            // advTimeDataSet2
-            // 
-            this.advTimeDataSet2.DataSetName = "AdvTimeDataSet";
-            this.advTimeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -220,10 +192,39 @@
             this.operatornameDataGridViewTextBoxColumn.HeaderText = "Оператор";
             this.operatornameDataGridViewTextBoxColumn.Name = "operatornameDataGridViewTextBoxColumn";
             // 
+            // schedulefullBindingSource
+            // 
+            this.schedulefullBindingSource.DataMember = "Schedulefull";
+            this.schedulefullBindingSource.DataSource = this.advTimeDataSet2;
+            // 
+            // advTimeDataSet2
+            // 
+            this.advTimeDataSet2.DataSetName = "AdvTimeDataSet";
+            this.advTimeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // advTimeDataSet1
+            // 
+            this.advTimeDataSet1.DataSetName = "AdvTimeDataSet";
+            this.advTimeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataMember = "Schedulefull";
+            this.scheduleBindingSource.DataSource = this.advTimeDataSet2;
+            // 
+            // scheduleTableAdapter
+            // 
+            this.scheduleTableAdapter.ClearBeforeFill = true;
+            // 
+            // schedulefullTableAdapter
+            // 
+            this.schedulefullTableAdapter.ClearBeforeFill = true;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1144, 506);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.newschedulebutton);
@@ -233,9 +234,9 @@
             this.Load += new System.EventHandler(this.Schedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulefullBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -29,13 +29,14 @@ namespace AdventureTime
                 }
                 else
                 {
-                    LoggedUser.loggeduser = CurUser[0].ToString();
+                    LoggedUser.loggeduser = CurUser[2].ToString();
+
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Пользователь или пароль введны неверно", "О нет, ошибка!", MessageBoxButtons.OK);
+                MessageBox.Show("Ошибка запроса к базе данных", "О нет, ошибка!", MessageBoxButtons.OK);
             }
             
         }
@@ -57,6 +58,11 @@ namespace AdventureTime
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginBox_TextChanged(object sender, EventArgs e)
         {
 
         }
