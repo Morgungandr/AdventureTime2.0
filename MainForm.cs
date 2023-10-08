@@ -12,9 +12,9 @@ using System.Windows.Forms.VisualStyles;
 namespace AdventureTime
 {
     
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace AdventureTime
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet1.SalesView1". При необходимости она может быть перемещена или удалена.
-            Form2 form = new Form2();
+            Login form = new Login();
             form.ShowDialog();
             if (LoggedUser.loggeduser == "") {
                 System.Windows.Forms.Application.Exit();

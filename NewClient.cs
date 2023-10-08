@@ -13,9 +13,9 @@ using System.Xml.Linq;
 
 namespace AdventureTime
 {
-    public partial class Form3 : Form 
+    public partial class NewClient : Form 
     {
-        public Form3(string idclient = "0"
+        public NewClient(string idclient = "0"
             , string FIO = ""
             , DateTime birthdate = default(DateTime) 
            , string passportseria = ""

@@ -1,6 +1,6 @@
 ﻿namespace AdventureTime
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -50,7 +50,6 @@
             this.tournameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vidturanameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pitaniatipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tourpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departurecityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -202,7 +201,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.expr1DataGridViewTextBoxColumn,
@@ -213,7 +212,6 @@
             this.tournameDataGridViewTextBoxColumn,
             this.vidturanameDataGridViewTextBoxColumn,
             this.pitaniatipDataGridViewTextBoxColumn,
-            this.tourpriceDataGridViewTextBoxColumn,
             this.countryDataGridViewTextBoxColumn,
             this.departurecityDataGridViewTextBoxColumn,
             this.durationDataGridViewTextBoxColumn});
@@ -227,7 +225,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(1085, 444);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
@@ -238,6 +238,7 @@
             this.expr1DataGridViewTextBoxColumn.HeaderText = "Сотрудник";
             this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
             this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.expr1DataGridViewTextBoxColumn.Width = 85;
             // 
             // datesDataGridViewTextBoxColumn
             // 
@@ -245,6 +246,7 @@
             this.datesDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
             this.datesDataGridViewTextBoxColumn.Name = "datesDataGridViewTextBoxColumn";
             this.datesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datesDataGridViewTextBoxColumn.Width = 97;
             // 
             // fIODataGridViewTextBoxColumn
             // 
@@ -252,6 +254,7 @@
             this.fIODataGridViewTextBoxColumn.HeaderText = "Клиент";
             this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
             this.fIODataGridViewTextBoxColumn.ReadOnly = true;
+            this.fIODataGridViewTextBoxColumn.Width = 68;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
@@ -259,6 +262,7 @@
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 77;
             // 
             // skidkanameDataGridViewTextBoxColumn
             // 
@@ -266,6 +270,7 @@
             this.skidkanameDataGridViewTextBoxColumn.HeaderText = "Скидка";
             this.skidkanameDataGridViewTextBoxColumn.Name = "skidkanameDataGridViewTextBoxColumn";
             this.skidkanameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.skidkanameDataGridViewTextBoxColumn.Width = 69;
             // 
             // tournameDataGridViewTextBoxColumn
             // 
@@ -273,6 +278,7 @@
             this.tournameDataGridViewTextBoxColumn.HeaderText = "Тур";
             this.tournameDataGridViewTextBoxColumn.Name = "tournameDataGridViewTextBoxColumn";
             this.tournameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tournameDataGridViewTextBoxColumn.Width = 50;
             // 
             // vidturanameDataGridViewTextBoxColumn
             // 
@@ -280,6 +286,7 @@
             this.vidturanameDataGridViewTextBoxColumn.HeaderText = "Тип тура";
             this.vidturanameDataGridViewTextBoxColumn.Name = "vidturanameDataGridViewTextBoxColumn";
             this.vidturanameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vidturanameDataGridViewTextBoxColumn.Width = 70;
             // 
             // pitaniatipDataGridViewTextBoxColumn
             // 
@@ -287,13 +294,7 @@
             this.pitaniatipDataGridViewTextBoxColumn.HeaderText = "Питание";
             this.pitaniatipDataGridViewTextBoxColumn.Name = "pitaniatipDataGridViewTextBoxColumn";
             this.pitaniatipDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tourpriceDataGridViewTextBoxColumn
-            // 
-            this.tourpriceDataGridViewTextBoxColumn.DataPropertyName = "tourprice";
-            this.tourpriceDataGridViewTextBoxColumn.HeaderText = "Цена поездки";
-            this.tourpriceDataGridViewTextBoxColumn.Name = "tourpriceDataGridViewTextBoxColumn";
-            this.tourpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pitaniatipDataGridViewTextBoxColumn.Width = 75;
             // 
             // countryDataGridViewTextBoxColumn
             // 
@@ -301,6 +302,7 @@
             this.countryDataGridViewTextBoxColumn.HeaderText = "Страна";
             this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
             this.countryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.countryDataGridViewTextBoxColumn.Width = 68;
             // 
             // departurecityDataGridViewTextBoxColumn
             // 
@@ -308,6 +310,7 @@
             this.departurecityDataGridViewTextBoxColumn.HeaderText = "Город отправления";
             this.departurecityDataGridViewTextBoxColumn.Name = "departurecityDataGridViewTextBoxColumn";
             this.departurecityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.departurecityDataGridViewTextBoxColumn.Width = 119;
             // 
             // durationDataGridViewTextBoxColumn
             // 
@@ -315,6 +318,7 @@
             this.durationDataGridViewTextBoxColumn.HeaderText = "Длительность";
             this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
             this.durationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.durationDataGridViewTextBoxColumn.Width = 105;
             // 
             // salesViewBindingSource
             // 
@@ -331,7 +335,7 @@
             // 
             this.salesViewTableAdapter1.ClearBeforeFill = true;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -339,7 +343,7 @@
             this.ClientSize = new System.Drawing.Size(1085, 476);
             this.Controls.Add(this.splitContainer1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Время приключений";
             this.Load += new System.EventHandler(this.Form1_Load);

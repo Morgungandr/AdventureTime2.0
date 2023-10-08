@@ -1,6 +1,6 @@
 ﻿namespace AdventureTime
 {
-    partial class Form3
+    partial class NewClient
     {
         /// <summary>
         /// Required designer variable.
@@ -238,11 +238,11 @@
             // 
             this.clientTableAdapter1.ClearBeforeFill = true;
             // 
-            // Form3
+            // NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 412);
+            this.ClientSize = new System.Drawing.Size(508, 381);
             this.ControlBox = false;
             this.Controls.Add(this.labelid);
             this.Controls.Add(this.label9);
@@ -265,7 +265,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form3";
+            this.Name = "NewClient";
             this.Text = "Данные клиента";
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).EndInit();
             this.ResumeLayout(false);

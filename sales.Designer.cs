@@ -57,7 +57,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idsaleDataGridViewTextBoxColumn,
@@ -73,9 +76,12 @@
             this.dateofdispatchDataGridViewTextBoxColumn,
             this.returndateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 34);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 46);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 404);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(810, 404);
             this.dataGridView1.TabIndex = 0;
             // 
             // bindingSource1
@@ -143,18 +149,21 @@
             this.tournameDataGridViewTextBoxColumn.DataPropertyName = "tourname";
             this.tournameDataGridViewTextBoxColumn.HeaderText = "Тур";
             this.tournameDataGridViewTextBoxColumn.Name = "tournameDataGridViewTextBoxColumn";
+            this.tournameDataGridViewTextBoxColumn.Width = 50;
             // 
             // fIODataGridViewTextBoxColumn
             // 
             this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
             this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО";
             this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
+            this.fIODataGridViewTextBoxColumn.Width = 59;
             // 
             // FIOsotr
             // 
             this.FIOsotr.DataPropertyName = "FIOsotr";
             this.FIOsotr.HeaderText = "Сотрудник";
             this.FIOsotr.Name = "FIOsotr";
+            this.FIOsotr.Width = 85;
             // 
             // datesDataGridViewTextBoxColumn
             // 
@@ -169,18 +178,21 @@
             this.skidkanameDataGridViewTextBoxColumn.DataPropertyName = "skidkaname";
             this.skidkanameDataGridViewTextBoxColumn.HeaderText = "Скидка";
             this.skidkanameDataGridViewTextBoxColumn.Name = "skidkanameDataGridViewTextBoxColumn";
+            this.skidkanameDataGridViewTextBoxColumn.Width = 69;
             // 
             // dateofdispatchDataGridViewTextBoxColumn
             // 
             this.dateofdispatchDataGridViewTextBoxColumn.DataPropertyName = "dateofdispatch";
             this.dateofdispatchDataGridViewTextBoxColumn.HeaderText = "Дата отправки";
             this.dateofdispatchDataGridViewTextBoxColumn.Name = "dateofdispatchDataGridViewTextBoxColumn";
+            this.dateofdispatchDataGridViewTextBoxColumn.Width = 99;
             // 
             // returndateDataGridViewTextBoxColumn
             // 
             this.returndateDataGridViewTextBoxColumn.DataPropertyName = "returndate";
             this.returndateDataGridViewTextBoxColumn.HeaderText = "Дата возвращения";
             this.returndateDataGridViewTextBoxColumn.Name = "returndateDataGridViewTextBoxColumn";
+            this.returndateDataGridViewTextBoxColumn.Width = 119;
             // 
             // button1
             // 
@@ -205,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(810, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);

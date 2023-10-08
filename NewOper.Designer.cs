@@ -32,18 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newoper));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
             this.operatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.operatorsTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.OperatorsTableAdapter();
+            this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idoperatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatoropisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operatorsTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.OperatorsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operatorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -75,33 +75,37 @@
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            // dataGridView1
+            // operatorsBindingSource
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idoperatorDataGridViewTextBoxColumn,
-            this.operatornameDataGridViewTextBoxColumn,
-            this.operatoropisDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.operatorsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(654, 331);
-            this.dataGridView1.TabIndex = 1;
+            this.operatorsBindingSource.DataMember = "Operators";
+            this.operatorsBindingSource.DataSource = this.advTimeDataSet;
             // 
             // advTimeDataSet
             // 
             this.advTimeDataSet.DataSetName = "AdvTimeDataSet";
             this.advTimeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // operatorsBindingSource
+            // dataGridView1
             // 
-            this.operatorsBindingSource.DataMember = "Operators";
-            this.operatorsBindingSource.DataSource = this.advTimeDataSet;
-            // 
-            // operatorsTableAdapter
-            // 
-            this.operatorsTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idoperatorDataGridViewTextBoxColumn,
+            this.operatornameDataGridViewTextBoxColumn,
+            this.operatoropisDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.operatorsBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 422);
+            this.dataGridView1.TabIndex = 1;
             // 
             // idoperatorDataGridViewTextBoxColumn
             // 
@@ -115,6 +119,7 @@
             this.operatornameDataGridViewTextBoxColumn.DataPropertyName = "operatorname";
             this.operatornameDataGridViewTextBoxColumn.HeaderText = "Оператор";
             this.operatornameDataGridViewTextBoxColumn.Name = "operatornameDataGridViewTextBoxColumn";
+            this.operatornameDataGridViewTextBoxColumn.Width = 81;
             // 
             // operatoropisDataGridViewTextBoxColumn
             // 
@@ -123,6 +128,10 @@
             this.operatoropisDataGridViewTextBoxColumn.HeaderText = "Описание";
             this.operatoropisDataGridViewTextBoxColumn.Name = "operatoropisDataGridViewTextBoxColumn";
             this.operatoropisDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // operatorsTableAdapter
+            // 
+            this.operatorsTableAdapter.ClearBeforeFill = true;
             // 
             // newoper
             // 
@@ -137,9 +146,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.operatorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

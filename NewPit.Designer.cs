@@ -48,16 +48,25 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idpitanieDataGridViewTextBoxColumn,
             this.pitaniatipDataGridViewTextBoxColumn,
             this.pitaniaopisDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pitanieBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 28);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 36);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(584, 260);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(604, 260);
             this.dataGridView1.TabIndex = 0;
             // 
             // idpitanieDataGridViewTextBoxColumn
@@ -73,12 +82,14 @@
             this.pitaniatipDataGridViewTextBoxColumn.DataPropertyName = "pitaniatip";
             this.pitaniatipDataGridViewTextBoxColumn.HeaderText = "Вид питания";
             this.pitaniatipDataGridViewTextBoxColumn.Name = "pitaniatipDataGridViewTextBoxColumn";
+            this.pitaniatipDataGridViewTextBoxColumn.Width = 95;
             // 
             // pitaniaopisDataGridViewTextBoxColumn
             // 
             this.pitaniaopisDataGridViewTextBoxColumn.DataPropertyName = "pitaniaopis";
             this.pitaniaopisDataGridViewTextBoxColumn.HeaderText = "Описание";
             this.pitaniaopisDataGridViewTextBoxColumn.Name = "pitaniaopisDataGridViewTextBoxColumn";
+            this.pitaniaopisDataGridViewTextBoxColumn.Width = 82;
             // 
             // pitanieBindingSource
             // 
@@ -109,7 +120,7 @@
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(800, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(604, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -127,9 +138,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(604, 296);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "NewPit";
             this.Text = "NewPit";
             this.Load += new System.EventHandler(this.NewPit_Load);

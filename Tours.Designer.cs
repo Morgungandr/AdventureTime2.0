@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tourform));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.toursearch = new System.Windows.Forms.Button();
-            this.filterbox = new System.Windows.Forms.TextBox();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.toursTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.ToursTableAdapter();
             this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tourname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +45,14 @@
             this.idvidtura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpitanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idoperator = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.toursearch = new System.Windows.Forms.Button();
+            this.filterbox = new System.Windows.Forms.TextBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.toursTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.ToursTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).BeginInit();
@@ -61,7 +61,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtour,
@@ -79,12 +82,116 @@
             this.idpitanie,
             this.idoperator});
             this.dataGridView1.DataSource = this.bindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1145, 384);
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(1169, 413);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idtour
+            // 
+            this.idtour.DataPropertyName = "idtura";
+            this.idtour.HeaderText = "ID";
+            this.idtour.Name = "idtour";
+            this.idtour.ReadOnly = true;
+            this.idtour.Width = 43;
+            // 
+            // tourname
+            // 
+            this.tourname.DataPropertyName = "tourname";
+            this.tourname.HeaderText = "Тур";
+            this.tourname.Name = "tourname";
+            this.tourname.Width = 50;
+            // 
+            // country
+            // 
+            this.country.DataPropertyName = "country";
+            this.country.HeaderText = "Страна прибытия";
+            this.country.Name = "country";
+            this.country.Width = 110;
+            // 
+            // vidturanameDataGridViewTextBoxColumn
+            // 
+            this.vidturanameDataGridViewTextBoxColumn.DataPropertyName = "vidturaname";
+            this.vidturanameDataGridViewTextBoxColumn.HeaderText = "Вид тура";
+            this.vidturanameDataGridViewTextBoxColumn.Name = "vidturanameDataGridViewTextBoxColumn";
+            this.vidturanameDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // pitaniatipDataGridViewTextBoxColumn
+            // 
+            this.pitaniatipDataGridViewTextBoxColumn.DataPropertyName = "pitaniatip";
+            this.pitaniatipDataGridViewTextBoxColumn.HeaderText = "Тип питания";
+            this.pitaniatipDataGridViewTextBoxColumn.Name = "pitaniatipDataGridViewTextBoxColumn";
+            this.pitaniatipDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // tourprice
+            // 
+            this.tourprice.DataPropertyName = "tourprice";
+            this.tourprice.HeaderText = "Цена тура";
+            this.tourprice.Name = "tourprice";
+            this.tourprice.Width = 77;
+            // 
+            // maxadult
+            // 
+            this.maxadult.DataPropertyName = "maxadult";
+            this.maxadult.HeaderText = "Макс вз";
+            this.maxadult.Name = "maxadult";
+            this.maxadult.Width = 69;
+            // 
+            // maxchild
+            // 
+            this.maxchild.DataPropertyName = "maxchild";
+            this.maxchild.HeaderText = "Макс дет";
+            this.maxchild.Name = "maxchild";
+            this.maxchild.Width = 73;
+            // 
+            // duration
+            // 
+            this.duration.DataPropertyName = "duration";
+            this.duration.HeaderText = "Длительность";
+            this.duration.Name = "duration";
+            this.duration.Width = 105;
+            // 
+            // operatornameDataGridViewTextBoxColumn
+            // 
+            this.operatornameDataGridViewTextBoxColumn.DataPropertyName = "operatorname";
+            this.operatornameDataGridViewTextBoxColumn.HeaderText = "Оператор";
+            this.operatornameDataGridViewTextBoxColumn.Name = "operatornameDataGridViewTextBoxColumn";
+            this.operatornameDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // departurecity
+            // 
+            this.departurecity.DataPropertyName = "departurecity";
+            this.departurecity.HeaderText = "Город отправ";
+            this.departurecity.Name = "departurecity";
+            this.departurecity.Width = 92;
+            // 
+            // idvidtura
+            // 
+            this.idvidtura.DataPropertyName = "idvidtura";
+            this.idvidtura.HeaderText = "idvidtura";
+            this.idvidtura.Name = "idvidtura";
+            this.idvidtura.Visible = false;
+            // 
+            // idpitanie
+            // 
+            this.idpitanie.DataPropertyName = "idpitanie";
+            this.idpitanie.HeaderText = "idpitanie";
+            this.idpitanie.Name = "idpitanie";
+            this.idpitanie.Visible = false;
+            // 
+            // idoperator
+            // 
+            this.idoperator.DataPropertyName = "idoperator";
+            this.idoperator.HeaderText = "idoperator";
+            this.idoperator.Name = "idoperator";
+            this.idoperator.Visible = false;
             // 
             // bindingSource1
             // 
@@ -143,94 +250,6 @@
             // toursTableAdapter1
             // 
             this.toursTableAdapter1.ClearBeforeFill = true;
-            // 
-            // idtour
-            // 
-            this.idtour.DataPropertyName = "idtura";
-            this.idtour.HeaderText = "ID";
-            this.idtour.Name = "idtour";
-            this.idtour.ReadOnly = true;
-            // 
-            // tourname
-            // 
-            this.tourname.DataPropertyName = "tourname";
-            this.tourname.HeaderText = "Тур";
-            this.tourname.Name = "tourname";
-            // 
-            // country
-            // 
-            this.country.DataPropertyName = "country";
-            this.country.HeaderText = "Страна прибытия";
-            this.country.Name = "country";
-            // 
-            // vidturanameDataGridViewTextBoxColumn
-            // 
-            this.vidturanameDataGridViewTextBoxColumn.DataPropertyName = "vidturaname";
-            this.vidturanameDataGridViewTextBoxColumn.HeaderText = "Вид тура";
-            this.vidturanameDataGridViewTextBoxColumn.Name = "vidturanameDataGridViewTextBoxColumn";
-            // 
-            // pitaniatipDataGridViewTextBoxColumn
-            // 
-            this.pitaniatipDataGridViewTextBoxColumn.DataPropertyName = "pitaniatip";
-            this.pitaniatipDataGridViewTextBoxColumn.HeaderText = "Тип питания";
-            this.pitaniatipDataGridViewTextBoxColumn.Name = "pitaniatipDataGridViewTextBoxColumn";
-            // 
-            // tourprice
-            // 
-            this.tourprice.DataPropertyName = "tourprice";
-            this.tourprice.HeaderText = "Цена тура";
-            this.tourprice.Name = "tourprice";
-            // 
-            // maxadult
-            // 
-            this.maxadult.DataPropertyName = "maxadult";
-            this.maxadult.HeaderText = "Макс вз";
-            this.maxadult.Name = "maxadult";
-            // 
-            // maxchild
-            // 
-            this.maxchild.DataPropertyName = "maxchild";
-            this.maxchild.HeaderText = "Макс дет";
-            this.maxchild.Name = "maxchild";
-            // 
-            // duration
-            // 
-            this.duration.DataPropertyName = "duration";
-            this.duration.HeaderText = "Длительность";
-            this.duration.Name = "duration";
-            // 
-            // operatornameDataGridViewTextBoxColumn
-            // 
-            this.operatornameDataGridViewTextBoxColumn.DataPropertyName = "operatorname";
-            this.operatornameDataGridViewTextBoxColumn.HeaderText = "Оператор";
-            this.operatornameDataGridViewTextBoxColumn.Name = "operatornameDataGridViewTextBoxColumn";
-            // 
-            // departurecity
-            // 
-            this.departurecity.DataPropertyName = "departurecity";
-            this.departurecity.HeaderText = "Город отправ";
-            this.departurecity.Name = "departurecity";
-            // 
-            // idvidtura
-            // 
-            this.idvidtura.DataPropertyName = "idvidtura";
-            this.idvidtura.HeaderText = "idvidtura";
-            this.idvidtura.Name = "idvidtura";
-            this.idvidtura.Visible = false;
-            // 
-            // idpitanie
-            // 
-            this.idpitanie.DataPropertyName = "idpitanie";
-            this.idpitanie.HeaderText = "idpitanie";
-            this.idpitanie.Name = "idpitanie";
-            this.idpitanie.Visible = false;
-            // 
-            // idoperator
-            // 
-            this.idoperator.DataPropertyName = "idoperator";
-            this.idoperator.HeaderText = "idoperator";
-            this.idoperator.Name = "idoperator";
-            this.idoperator.Visible = false;
             // 
             // tourform
             // 

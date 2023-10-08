@@ -37,7 +37,7 @@ namespace AdventureTime
 
         private void addclientbutton_Click(object sender, EventArgs e)
         {
-            Form3 clientsform = new Form3();
+            NewClient clientsform = new NewClient();
             clientsform.ShowDialog();
             this.clientTableAdapter.Fill(this.advTimeDataSet.Client);
 
@@ -57,7 +57,7 @@ namespace AdventureTime
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 clientsform = new Form3( idclient: (dataGridView1.SelectedRows[0].Cells[0].Value.ToString()),
+            NewClient clientsform = new NewClient( idclient: (dataGridView1.SelectedRows[0].Cells[0].Value.ToString()),
                FIO: (dataGridView1.SelectedRows[0].Cells[1].Value.ToString()),
             birthdate : (Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[2].Value.ToString())),
             passportseria: (dataGridView1.SelectedRows[0].Cells[5].Value.ToString()),

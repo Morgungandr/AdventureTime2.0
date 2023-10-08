@@ -51,6 +51,8 @@
             // 
             // Tourchoosebox
             // 
+            this.Tourchoosebox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Tourchoosebox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Tourchoosebox.DataSource = this.bindingSource2;
             this.Tourchoosebox.DisplayMember = "tourname";
             this.Tourchoosebox.FormattingEnabled = true;
