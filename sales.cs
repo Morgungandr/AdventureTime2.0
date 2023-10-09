@@ -12,6 +12,7 @@ namespace AdventureTime
 {
     public partial class sales : Form
     {
+        
         public sales()
         {
             InitializeComponent();

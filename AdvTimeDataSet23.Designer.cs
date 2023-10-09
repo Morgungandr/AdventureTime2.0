@@ -16658,12 +16658,24 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idsale, idsotrudnik, idschedule, idclient, dates, idskidka, finalpr" +
                 "ice\r\nFROM            Sale";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO Sale\r\n                         (idsale, idsotrudnik, idschedule, idcl" +
+                "ient, idskidka, finalprice, dates)\r\nVALUES        (@idsale,@idsotrudnik,@idsched" +
+                "ule,@idclient,@idskidka,@finalprice, dates)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsale", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idsale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsotrudnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idsotrudnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idschedule", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idclient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idclient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idskidka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idskidka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@finalprice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "finalprice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16960,6 +16972,60 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice, int Original_idsale, global::System.Nullable<int> Original_idsotrudnik, global::System.Nullable<int> Original_idschedule, global::System.Nullable<int> Original_idclient, global::System.Nullable<global::System.DateTime> Original_dates, global::System.Nullable<int> Original_idskidka, global::System.Nullable<decimal> Original_finalprice) {
             return this.Update(Original_idsale, idsotrudnik, idschedule, idclient, dates, idskidka, finalprice, Original_idsale, Original_idsotrudnik, Original_idschedule, Original_idclient, Original_dates, Original_idskidka, Original_finalprice);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int NewSale(int idsale, global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(idsale));
+            if ((idsotrudnik.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(idsotrudnik.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((idschedule.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(idschedule.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((idclient.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(idclient.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((idskidka.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idskidka.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((finalprice.HasValue == true)) {
+                command.Parameters[5].Value = ((decimal)(finalprice.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
