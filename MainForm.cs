@@ -22,11 +22,13 @@ namespace AdventureTime
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet1.SalesView1". При необходимости она может быть перемещена или удалена.
-            Login form = new Login();
-            form.ShowDialog();
-            if (LoggedUser.loggeduser == "") {
-                System.Windows.Forms.Application.Exit();
-            }
+            LoggedUser.loggeduser = "102";
+            //   Login form = new Login();
+            //   form.ShowDialog();
+            //  if (LoggedUser.loggeduser == "") {
+            //      System.Windows.Forms.Application.Exit();
+            //  }
+
             salesViewTableAdapter1.Fill(advTimeDataSet.SalesView);
             
 
@@ -84,8 +86,29 @@ namespace AdventureTime
 
         private void salebutton_Click(object sender, EventArgs e)
         {
-            sales clientsform = new sales();
+            newsale clientsform = new newsale();
             clientsform.ShowDialog();
+            salesViewTableAdapter1.Fill(advTimeDataSet.SalesView);
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            newsale clientsform = new newsale(
+                idsale: (dataGridView1.SelectedRows[0].Cells[12].Value.ToString())
+                , idschedule: (dataGridView1.SelectedRows[0].Cells[13].Value.ToString())
+                , idclient: (dataGridView1.SelectedRows[0].Cells[16].Value.ToString())
+                , idsotrudnik:(dataGridView1.SelectedRows[0].Cells[15].Value.ToString())
+                , idskidka: (dataGridView1.SelectedRows[0].Cells[17].Value.ToString())
+                );
+            clientsform.ShowDialog();
+            salesViewTableAdapter1.Fill(advTimeDataSet.SalesView);
+
+        }
+
+        private void возвратToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public static class LoggedUser

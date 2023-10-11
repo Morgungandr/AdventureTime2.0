@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.salebutton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.EditClientButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +49,24 @@
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departurecityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finalprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idsale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idschedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idsotrudnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idclient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idskidka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idvidtura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpitanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
             this.salesViewTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SalesViewTableAdapter();
+            this.продаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.турыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.клиентыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.возвратToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -76,71 +87,25 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.splitContainer1.Panel1.Controls.Add(this.salebutton);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.EditClientButton);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(1085, 476);
-            this.splitContainer1.SplitterDistance = 28;
+            this.splitContainer1.SplitterDistance = 82;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // salebutton
-            // 
-            this.salebutton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.salebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salebutton.Location = new System.Drawing.Point(300, 3);
-            this.salebutton.Name = "salebutton";
-            this.salebutton.Size = new System.Drawing.Size(93, 23);
-            this.salebutton.TabIndex = 4;
-            this.salebutton.Text = "Продажа";
-            this.salebutton.UseVisualStyleBackColor = false;
-            this.salebutton.Click += new System.EventHandler(this.salebutton_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(201, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Расписание";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(102, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Туры";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // EditClientButton
-            // 
-            this.EditClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditClientButton.Location = new System.Drawing.Point(3, 3);
-            this.EditClientButton.Name = "EditClientButton";
-            this.EditClientButton.Size = new System.Drawing.Size(93, 23);
-            this.EditClientButton.TabIndex = 0;
-            this.EditClientButton.Text = "Клиенты";
-            this.EditClientButton.UseVisualStyleBackColor = true;
-            this.EditClientButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.расписаниеToolStripMenuItem,
+            this.продаToolStripMenuItem,
+            this.редактироватьToolStripMenuItem,
+            this.турыToolStripMenuItem1,
+            this.клиентыToolStripMenuItem1,
+            this.возвратToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1085, 24);
@@ -214,7 +179,16 @@
             this.pitaniatipDataGridViewTextBoxColumn,
             this.countryDataGridViewTextBoxColumn,
             this.departurecityDataGridViewTextBoxColumn,
-            this.durationDataGridViewTextBoxColumn});
+            this.durationDataGridViewTextBoxColumn,
+            this.finalprice,
+            this.idsale,
+            this.idschedule,
+            this.idtura,
+            this.idsotrudnik,
+            this.idclient,
+            this.idskidka,
+            this.idvidtura,
+            this.idpitanie});
             this.dataGridView1.DataSource = this.salesViewBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -228,7 +202,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1085, 444);
+            this.dataGridView1.Size = new System.Drawing.Size(1085, 390);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -320,6 +294,86 @@
             this.durationDataGridViewTextBoxColumn.ReadOnly = true;
             this.durationDataGridViewTextBoxColumn.Width = 105;
             // 
+            // finalprice
+            // 
+            this.finalprice.DataPropertyName = "finalprice";
+            this.finalprice.HeaderText = "Итоговая цена";
+            this.finalprice.Name = "finalprice";
+            this.finalprice.ReadOnly = true;
+            this.finalprice.Width = 98;
+            // 
+            // idsale
+            // 
+            this.idsale.DataPropertyName = "idsale";
+            this.idsale.HeaderText = "idsale";
+            this.idsale.Name = "idsale";
+            this.idsale.ReadOnly = true;
+            this.idsale.Visible = false;
+            this.idsale.Width = 59;
+            // 
+            // idschedule
+            // 
+            this.idschedule.DataPropertyName = "idschedule";
+            this.idschedule.HeaderText = "idschedule";
+            this.idschedule.Name = "idschedule";
+            this.idschedule.ReadOnly = true;
+            this.idschedule.Visible = false;
+            this.idschedule.Width = 83;
+            // 
+            // idtura
+            // 
+            this.idtura.DataPropertyName = "idtura";
+            this.idtura.HeaderText = "idtura";
+            this.idtura.Name = "idtura";
+            this.idtura.ReadOnly = true;
+            this.idtura.Visible = false;
+            this.idtura.Width = 58;
+            // 
+            // idsotrudnik
+            // 
+            this.idsotrudnik.DataPropertyName = "idsotrudnik";
+            this.idsotrudnik.HeaderText = "idsotrudnik";
+            this.idsotrudnik.Name = "idsotrudnik";
+            this.idsotrudnik.ReadOnly = true;
+            this.idsotrudnik.Visible = false;
+            this.idsotrudnik.Width = 83;
+            // 
+            // idclient
+            // 
+            this.idclient.DataPropertyName = "idclient";
+            this.idclient.HeaderText = "idclient";
+            this.idclient.Name = "idclient";
+            this.idclient.ReadOnly = true;
+            this.idclient.Visible = false;
+            this.idclient.Width = 65;
+            // 
+            // idskidka
+            // 
+            this.idskidka.DataPropertyName = "idskidka";
+            this.idskidka.HeaderText = "idskidka";
+            this.idskidka.Name = "idskidka";
+            this.idskidka.ReadOnly = true;
+            this.idskidka.Visible = false;
+            this.idskidka.Width = 71;
+            // 
+            // idvidtura
+            // 
+            this.idvidtura.DataPropertyName = "idvidtura";
+            this.idvidtura.HeaderText = "idvidtura";
+            this.idvidtura.Name = "idvidtura";
+            this.idvidtura.ReadOnly = true;
+            this.idvidtura.Visible = false;
+            this.idvidtura.Width = 72;
+            // 
+            // idpitanie
+            // 
+            this.idpitanie.DataPropertyName = "idpitanie";
+            this.idpitanie.HeaderText = "idpitanie";
+            this.idpitanie.Name = "idpitanie";
+            this.idpitanie.ReadOnly = true;
+            this.idpitanie.Visible = false;
+            this.idpitanie.Width = 71;
+            // 
             // salesViewBindingSource
             // 
             this.salesViewBindingSource.AllowNew = false;
@@ -334,6 +388,51 @@
             // salesViewTableAdapter1
             // 
             this.salesViewTableAdapter1.ClearBeforeFill = true;
+            // 
+            // продаToolStripMenuItem
+            // 
+            this.продаToolStripMenuItem.Name = "продаToolStripMenuItem";
+            this.продаToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.продаToolStripMenuItem.Text = "Продажа";
+            this.продаToolStripMenuItem.Click += new System.EventHandler(this.salebutton_Click);
+            // 
+            // редактироватьToolStripMenuItem
+            // 
+            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // расписаниеToolStripMenuItem
+            // 
+            this.расписаниеToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
+            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.расписаниеToolStripMenuItem.Text = "Расписание";
+            this.расписаниеToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // турыToolStripMenuItem1
+            // 
+            this.турыToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.турыToolStripMenuItem1.Name = "турыToolStripMenuItem1";
+            this.турыToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
+            this.турыToolStripMenuItem1.Text = "Туры";
+            this.турыToolStripMenuItem1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // клиентыToolStripMenuItem1
+            // 
+            this.клиентыToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.клиентыToolStripMenuItem1.Name = "клиентыToolStripMenuItem1";
+            this.клиентыToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.клиентыToolStripMenuItem1.Text = "Клиенты";
+            this.клиентыToolStripMenuItem1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // возвратToolStripMenuItem
+            // 
+            this.возвратToolStripMenuItem.Name = "возвратToolStripMenuItem";
+            this.возвратToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.возвратToolStripMenuItem.Text = "Возврат";
+            this.возвратToolStripMenuItem.Click += new System.EventHandler(this.возвратToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -368,8 +467,6 @@
         private System.Windows.Forms.BindingSource salesViewBindingSource;
         private AdvTimeDataSet advTimeDataSet;
         private AdvTimeDataSetTableAdapters.SalesViewTableAdapter salesViewTableAdapter1;
-        private System.Windows.Forms.Button EditClientButton;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
@@ -377,7 +474,7 @@
         private System.Windows.Forms.ToolStripMenuItem питаниеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem видыТуровToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem операторыToolStripMenuItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tourpriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
@@ -386,11 +483,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tournameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vidturanameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pitaniatipDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tourpriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departurecityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button salebutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn finalprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idsale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idschedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idsotrudnik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idskidka;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idvidtura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpitanie;
+        private System.Windows.Forms.ToolStripMenuItem продаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem расписаниеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem турыToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem возвратToolStripMenuItem;
     }
 }
 

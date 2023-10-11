@@ -3063,10 +3063,10 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SaleRow AddSaleRow(int idsale, SotrudnikRow parentSotrudnikRowByFK_Sale_Sotrudnik, ScheduleRow parentScheduleRowByFK_Sale_Schedule, SaleFullRow parentSaleFullRowByFK_Sale_Client, System.DateTime dates, SkidkaRow parentSkidkaRowByFK_Sale_Skidka, decimal finalprice) {
+            public SaleRow AddSaleRow(SotrudnikRow parentSotrudnikRowByFK_Sale_Sotrudnik, ScheduleRow parentScheduleRowByFK_Sale_Schedule, SaleFullRow parentSaleFullRowByFK_Sale_Client, System.DateTime dates, SkidkaRow parentSkidkaRowByFK_Sale_Skidka, decimal finalprice) {
                 SaleRow rowSaleRow = ((SaleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        idsale,
+                        null,
                         null,
                         null,
                         null,
@@ -3142,6 +3142,8 @@ namespace AdventureTime {
                 base.Columns.Add(this.columnfinalprice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidsale}, true));
+                this.columnidsale.AutoIncrement = true;
+                this.columnidsale.AutoIncrementSeed = 163;
                 this.columnidsale.AllowDBNull = false;
                 this.columnidsale.Unique = true;
             }
@@ -5713,6 +5715,22 @@ namespace AdventureTime {
             
             private global::System.Data.DataColumn columnfinalprice;
             
+            private global::System.Data.DataColumn columnidsotrudnik;
+            
+            private global::System.Data.DataColumn columnidclient;
+            
+            private global::System.Data.DataColumn columnidskidka;
+            
+            private global::System.Data.DataColumn columnidsale;
+            
+            private global::System.Data.DataColumn columnidschedule;
+            
+            private global::System.Data.DataColumn columnidvidtura;
+            
+            private global::System.Data.DataColumn columnidpitanie;
+            
+            private global::System.Data.DataColumn columnidtura;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SalesViewDataTable() {
@@ -5844,6 +5862,70 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idsotrudnikColumn {
+                get {
+                    return this.columnidsotrudnik;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idclientColumn {
+                get {
+                    return this.columnidclient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idskidkaColumn {
+                get {
+                    return this.columnidskidka;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idsaleColumn {
+                get {
+                    return this.columnidsale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idscheduleColumn {
+                get {
+                    return this.columnidschedule;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idvidturaColumn {
+                get {
+                    return this.columnidvidtura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idpitanieColumn {
+                get {
+                    return this.columnidpitanie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idturaColumn {
+                get {
+                    return this.columnidtura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5879,7 +5961,27 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SalesViewRow AddSalesViewRow(string FIO, System.DateTime dates, string skidkaname, string vidturaname, string pitaniatip, string tourname, string departurecity, int duration, string country, string phone, string FIOsotr, decimal finalprice) {
+            public SalesViewRow AddSalesViewRow(
+                        string FIO, 
+                        System.DateTime dates, 
+                        string skidkaname, 
+                        string vidturaname, 
+                        string pitaniatip, 
+                        string tourname, 
+                        string departurecity, 
+                        int duration, 
+                        string country, 
+                        string phone, 
+                        string FIOsotr, 
+                        decimal finalprice, 
+                        int idsotrudnik, 
+                        int idclient, 
+                        int idskidka, 
+                        int idsale, 
+                        int idschedule, 
+                        int idvidtura, 
+                        int idpitanie, 
+                        int idtura) {
                 SalesViewRow rowSalesViewRow = ((SalesViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FIO,
@@ -5893,10 +5995,32 @@ namespace AdventureTime {
                         country,
                         phone,
                         FIOsotr,
-                        finalprice};
+                        finalprice,
+                        idsotrudnik,
+                        idclient,
+                        idskidka,
+                        idsale,
+                        idschedule,
+                        idvidtura,
+                        idpitanie,
+                        idtura};
                 rowSalesViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalesViewRow);
                 return rowSalesViewRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SalesViewRow FindByidsotrudnikidclientidskidkaidsaleidscheduleidvidturaidpitanieidtura(int idsotrudnik, int idclient, int idskidka, int idsale, int idschedule, int idvidtura, int idpitanie, int idtura) {
+                return ((SalesViewRow)(this.Rows.Find(new object[] {
+                            idsotrudnik,
+                            idclient,
+                            idskidka,
+                            idsale,
+                            idschedule,
+                            idvidtura,
+                            idpitanie,
+                            idtura})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5928,6 +6052,14 @@ namespace AdventureTime {
                 this.columnphone = base.Columns["phone"];
                 this.columnFIOsotr = base.Columns["FIOsotr"];
                 this.columnfinalprice = base.Columns["finalprice"];
+                this.columnidsotrudnik = base.Columns["idsotrudnik"];
+                this.columnidclient = base.Columns["idclient"];
+                this.columnidskidka = base.Columns["idskidka"];
+                this.columnidsale = base.Columns["idsale"];
+                this.columnidschedule = base.Columns["idschedule"];
+                this.columnidvidtura = base.Columns["idvidtura"];
+                this.columnidpitanie = base.Columns["idpitanie"];
+                this.columnidtura = base.Columns["idtura"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5957,6 +6089,31 @@ namespace AdventureTime {
                 base.Columns.Add(this.columnFIOsotr);
                 this.columnfinalprice = new global::System.Data.DataColumn("finalprice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfinalprice);
+                this.columnidsotrudnik = new global::System.Data.DataColumn("idsotrudnik", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidsotrudnik);
+                this.columnidclient = new global::System.Data.DataColumn("idclient", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidclient);
+                this.columnidskidka = new global::System.Data.DataColumn("idskidka", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidskidka);
+                this.columnidsale = new global::System.Data.DataColumn("idsale", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidsale);
+                this.columnidschedule = new global::System.Data.DataColumn("idschedule", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidschedule);
+                this.columnidvidtura = new global::System.Data.DataColumn("idvidtura", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidvidtura);
+                this.columnidpitanie = new global::System.Data.DataColumn("idpitanie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidpitanie);
+                this.columnidtura = new global::System.Data.DataColumn("idtura", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidtura);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidsotrudnik,
+                                this.columnidclient,
+                                this.columnidskidka,
+                                this.columnidsale,
+                                this.columnidschedule,
+                                this.columnidvidtura,
+                                this.columnidpitanie,
+                                this.columnidtura}, true));
                 this.columnFIO.MaxLength = 100;
                 this.columnskidkaname.MaxLength = 100;
                 this.columnvidturaname.MaxLength = 50;
@@ -5966,6 +6123,14 @@ namespace AdventureTime {
                 this.columncountry.MaxLength = 100;
                 this.columnphone.MaxLength = 100;
                 this.columnFIOsotr.MaxLength = 100;
+                this.columnidsotrudnik.AllowDBNull = false;
+                this.columnidclient.AllowDBNull = false;
+                this.columnidskidka.AllowDBNull = false;
+                this.columnidsale.AllowDBNull = false;
+                this.columnidschedule.AllowDBNull = false;
+                this.columnidvidtura.AllowDBNull = false;
+                this.columnidpitanie.AllowDBNull = false;
+                this.columnidtura.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11750,6 +11915,94 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idsotrudnik {
+                get {
+                    return ((int)(this[this.tableSalesView.idsotrudnikColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idsotrudnikColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idclient {
+                get {
+                    return ((int)(this[this.tableSalesView.idclientColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idclientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idskidka {
+                get {
+                    return ((int)(this[this.tableSalesView.idskidkaColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idskidkaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idsale {
+                get {
+                    return ((int)(this[this.tableSalesView.idsaleColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idsaleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idschedule {
+                get {
+                    return ((int)(this[this.tableSalesView.idscheduleColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idscheduleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idvidtura {
+                get {
+                    return ((int)(this[this.tableSalesView.idvidturaColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idvidturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idpitanie {
+                get {
+                    return ((int)(this[this.tableSalesView.idpitanieColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idpitanieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idtura {
+                get {
+                    return ((int)(this[this.tableSalesView.idturaColumn]));
+                }
+                set {
+                    this[this.tableSalesView.idturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFIONull() {
                 return this.IsNull(this.tableSalesView.FIOColumn);
             }
@@ -16611,11 +16864,10 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_finalprice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "finalprice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Sale] ([idsale], [idsotrudnik], [idschedule], [idclient], [dates], [" +
-                "idskidka], [finalprice]) VALUES (@idsale, @idsotrudnik, @idschedule, @idclient, " +
-                "@dates, @idskidka, @finalprice)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Sale] ([idsotrudnik], [idschedule], [idclient], [dates], [idskidka]," +
+                " [finalprice]) VALUES (@idsotrudnik, @idschedule, @idclient, @dates, @idskidka, " +
+                "@finalprice)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsale", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idsale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsotrudnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idsotrudnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idschedule", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idclient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idclient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16624,9 +16876,8 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@finalprice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "finalprice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Sale] SET [idsale] = @idsale, [idsotrudnik] = @idsotrudnik, [idschedule] = @idschedule, [idclient] = @idclient, [dates] = @dates, [idskidka] = @idskidka, [finalprice] = @finalprice WHERE (([idsale] = @Original_idsale) AND ((@IsNull_idsotrudnik = 1 AND [idsotrudnik] IS NULL) OR ([idsotrudnik] = @Original_idsotrudnik)) AND ((@IsNull_idschedule = 1 AND [idschedule] IS NULL) OR ([idschedule] = @Original_idschedule)) AND ((@IsNull_idclient = 1 AND [idclient] IS NULL) OR ([idclient] = @Original_idclient)) AND ((@IsNull_dates = 1 AND [dates] IS NULL) OR ([dates] = @Original_dates)) AND ((@IsNull_idskidka = 1 AND [idskidka] IS NULL) OR ([idskidka] = @Original_idskidka)) AND ((@IsNull_finalprice = 1 AND [finalprice] IS NULL) OR ([finalprice] = @Original_finalprice)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Sale] SET [idsotrudnik] = @idsotrudnik, [idschedule] = @idschedule, [idclient] = @idclient, [dates] = @dates, [idskidka] = @idskidka, [finalprice] = @finalprice WHERE (([idsale] = @Original_idsale) AND ((@IsNull_idsotrudnik = 1 AND [idsotrudnik] IS NULL) OR ([idsotrudnik] = @Original_idsotrudnik)) AND ((@IsNull_idschedule = 1 AND [idschedule] IS NULL) OR ([idschedule] = @Original_idschedule)) AND ((@IsNull_idclient = 1 AND [idclient] IS NULL) OR ([idclient] = @Original_idclient)) AND ((@IsNull_dates = 1 AND [dates] IS NULL) OR ([dates] = @Original_dates)) AND ((@IsNull_idskidka = 1 AND [idskidka] IS NULL) OR ([idskidka] = @Original_idskidka)) AND ((@IsNull_finalprice = 1 AND [finalprice] IS NULL) OR ([finalprice] = @Original_finalprice)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsale", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idsale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsotrudnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idsotrudnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idschedule", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idclient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idclient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16658,7 +16909,7 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idsale, idsotrudnik, idschedule, idclient, dates, idskidka, finalpr" +
@@ -16666,16 +16917,27 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO Sale\r\n                         (idsale, idsotrudnik, idschedule, idcl" +
-                "ient, idskidka, finalprice, dates)\r\nVALUES        (@idsale,@idsotrudnik,@idsched" +
-                "ule,@idclient,@idskidka,@finalprice, dates)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsale", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idsale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsotrudnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idsotrudnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idschedule", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idclient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idclient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idskidka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idskidka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@finalprice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "finalprice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].CommandText = "dbo.EditSale";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsotrudnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idschedule", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idclient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dates", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idskidka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@finalprice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.NewSale";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsotrudnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idschedule", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idclient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dates", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idskidka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@finalprice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16805,43 +17067,42 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idsale, global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idsale));
+        public virtual int Insert(global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice) {
             if ((idsotrudnik.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idsotrudnik.Value));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idsotrudnik.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((idschedule.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idschedule.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((idschedule.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idschedule.Value));
+            if ((idclient.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idclient.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((idclient.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(idclient.Value));
+            if ((dates.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dates.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((dates.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(dates.Value));
+            if ((idskidka.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(idskidka.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((idskidka.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idskidka.Value));
+            if ((finalprice.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(finalprice.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((finalprice.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(finalprice.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16863,92 +17124,91 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idsale, global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice, int Original_idsale, global::System.Nullable<int> Original_idsotrudnik, global::System.Nullable<int> Original_idschedule, global::System.Nullable<int> Original_idclient, global::System.Nullable<global::System.DateTime> Original_dates, global::System.Nullable<int> Original_idskidka, global::System.Nullable<decimal> Original_finalprice) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idsale));
+        public virtual int Update(global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice, int Original_idsale, global::System.Nullable<int> Original_idsotrudnik, global::System.Nullable<int> Original_idschedule, global::System.Nullable<int> Original_idclient, global::System.Nullable<global::System.DateTime> Original_dates, global::System.Nullable<int> Original_idskidka, global::System.Nullable<decimal> Original_finalprice) {
             if ((idsotrudnik.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idsotrudnik.Value));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idsotrudnik.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((idschedule.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idschedule.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((idschedule.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(idschedule.Value));
+            if ((idclient.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(idclient.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((idclient.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idclient.Value));
+            if ((dates.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dates.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((dates.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(dates.Value));
+            if ((idskidka.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(idskidka.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((idskidka.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(idskidka.Value));
+            if ((finalprice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(finalprice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((finalprice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(finalprice.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idsale));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idsale));
             if ((Original_idsotrudnik.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_idsotrudnik.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_idsotrudnik.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_idschedule.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_idschedule.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idschedule.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_idclient.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_idclient.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_idclient.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_dates.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_dates.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_dates.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_idskidka.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_idskidka.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_idskidka.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_finalprice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_finalprice.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_finalprice.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16969,18 +17229,74 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice, int Original_idsale, global::System.Nullable<int> Original_idsotrudnik, global::System.Nullable<int> Original_idschedule, global::System.Nullable<int> Original_idclient, global::System.Nullable<global::System.DateTime> Original_dates, global::System.Nullable<int> Original_idskidka, global::System.Nullable<decimal> Original_finalprice) {
-            return this.Update(Original_idsale, idsotrudnik, idschedule, idclient, dates, idskidka, finalprice, Original_idsale, Original_idsotrudnik, Original_idschedule, Original_idclient, Original_dates, Original_idskidka, Original_finalprice);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int EditSale(global::System.Nullable<int> id, global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((id.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((idsotrudnik.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(idsotrudnik.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((idschedule.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(idschedule.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((idclient.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idclient.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((dates.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(dates.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((idskidka.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(idskidka.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((finalprice.HasValue == true)) {
+                command.Parameters[7].Value = ((decimal)(finalprice.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int NewSale(int idsale, global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(idsale));
+        public virtual int NewSale(global::System.Nullable<int> idsotrudnik, global::System.Nullable<int> idschedule, global::System.Nullable<int> idclient, global::System.Nullable<global::System.DateTime> dates, global::System.Nullable<int> idskidka, global::System.Nullable<decimal> finalprice) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((idsotrudnik.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idsotrudnik.Value));
             }
@@ -16999,17 +17315,23 @@ SELECT idpitanie, pitaniatip, pitaniaopis FROM Pitanie WHERE (idpitanie = @idpit
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((idskidka.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(idskidka.Value));
+            if ((dates.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(dates.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((finalprice.HasValue == true)) {
-                command.Parameters[5].Value = ((decimal)(finalprice.Value));
+            if ((idskidka.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(idskidka.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((finalprice.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(finalprice.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19764,6 +20086,14 @@ SELECT idvidtura, vidturaname, vidturaopis FROM Vidtura WHERE (idvidtura = @idvi
             tableMapping.ColumnMappings.Add("phone", "phone");
             tableMapping.ColumnMappings.Add("FIOsotr", "FIOsotr");
             tableMapping.ColumnMappings.Add("finalprice", "finalprice");
+            tableMapping.ColumnMappings.Add("idsotrudnik", "idsotrudnik");
+            tableMapping.ColumnMappings.Add("idclient", "idclient");
+            tableMapping.ColumnMappings.Add("idskidka", "idskidka");
+            tableMapping.ColumnMappings.Add("idsale", "idsale");
+            tableMapping.ColumnMappings.Add("idschedule", "idschedule");
+            tableMapping.ColumnMappings.Add("idvidtura", "idvidtura");
+            tableMapping.ColumnMappings.Add("idpitanie", "idpitanie");
+            tableMapping.ColumnMappings.Add("idtura", "idtura");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -19781,7 +20111,9 @@ SELECT idvidtura, vidturaname, vidturaopis FROM Vidtura WHERE (idvidtura = @idvi
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        FIO, phone, dates, skidkaname, FIOsotr, vidturaname, pitaniatip, to" +
-                "urname, departurecity, duration, country, finalprice\r\nFROM            SalesView";
+                "urname, departurecity, duration, country, finalprice, idsotrudnik, idclient, ids" +
+                "kidka, idsale, idschedule, idvidtura, idpitanie, idtura\r\nFROM            SalesVi" +
+                "ew";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20905,7 +21237,7 @@ FROM            Pitanie INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Schedule.idschedule, Schedule.dateofdispatch, Schedule.returndate, Tour.country, Tour.duration, Tour.maxchild, Tour.maxadult, Tour.departurecity, Tour.tourprice, Tour.tourname, Tour.idtura, Pitanie.pitaniatip, 
@@ -20916,6 +21248,12 @@ FROM            Schedule INNER JOIN
                          Operators ON Tour.idoperator = Operators.idoperator INNER JOIN
                          Pitanie ON Tour.idpitanie = Pitanie.idpitanie";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.SelectSc";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20937,6 +21275,42 @@ FROM            Schedule INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual AdvTimeDataSet.SchedulefullDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            AdvTimeDataSet.SchedulefullDataTable dataTable = new AdvTimeDataSet.SchedulefullDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(AdvTimeDataSet.SchedulefullDataTable dataTable, global::System.Nullable<int> idsc) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idsc.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idsc.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AdvTimeDataSet.SchedulefullDataTable GetDataBy(global::System.Nullable<int> idsc) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idsc.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idsc.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             AdvTimeDataSet.SchedulefullDataTable dataTable = new AdvTimeDataSet.SchedulefullDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SotrudnikBox = new System.Windows.Forms.ComboBox();
             this.sotrudnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
             this.sotrudnikTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.SotrudnikTableAdapter();
@@ -56,6 +56,7 @@
             this.labelid = new System.Windows.Forms.Label();
             this.saleTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SaleTableAdapter();
             this.EndPriceBox = new System.Windows.Forms.TextBox();
+            this.schedulefullTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SchedulefullTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sotrudnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
@@ -117,17 +118,17 @@
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.TabStop = false;
             // 
-            // comboBox1
+            // SotrudnikBox
             // 
-            this.comboBox1.DataSource = this.sotrudnikBindingSource;
-            this.comboBox1.DisplayMember = "FIOsotr";
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(211, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.ValueMember = "idsotrudnik";
+            this.SotrudnikBox.DataSource = this.sotrudnikBindingSource;
+            this.SotrudnikBox.DisplayMember = "FIOsotr";
+            this.SotrudnikBox.Enabled = false;
+            this.SotrudnikBox.FormattingEnabled = true;
+            this.SotrudnikBox.Location = new System.Drawing.Point(211, 143);
+            this.SotrudnikBox.Name = "SotrudnikBox";
+            this.SotrudnikBox.Size = new System.Drawing.Size(184, 21);
+            this.SotrudnikBox.TabIndex = 6;
+            this.SotrudnikBox.ValueMember = "idsotrudnik";
             // 
             // sotrudnikBindingSource
             // 
@@ -280,6 +281,10 @@
             this.EndPriceBox.Size = new System.Drawing.Size(128, 20);
             this.EndPriceBox.TabIndex = 20;
             // 
+            // schedulefullTableAdapter1
+            // 
+            this.schedulefullTableAdapter1.ClearBeforeFill = true;
+            // 
             // newsale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,7 +302,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.skidkacombobox);
             this.Controls.Add(this.clientchoosebox);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.SotrudnikBox);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -324,7 +329,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SotrudnikBox;
         private AdvTimeDataSet advTimeDataSet1;
         private System.Windows.Forms.BindingSource sotrudnikBindingSource;
         private AdvTimeDataSetTableAdapters.SotrudnikTableAdapter sotrudnikTableAdapter;
@@ -345,5 +350,6 @@
         private System.Windows.Forms.Label labelid;
         private AdvTimeDataSetTableAdapters.SaleTableAdapter saleTableAdapter1;
         private System.Windows.Forms.TextBox EndPriceBox;
+        private AdvTimeDataSetTableAdapters.SchedulefullTableAdapter schedulefullTableAdapter1;
     }
 }

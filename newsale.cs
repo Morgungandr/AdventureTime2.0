@@ -9,6 +9,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AdventureTime.AdvTimeDataSet;
 
 namespace AdventureTime
 {
@@ -16,18 +17,22 @@ namespace AdventureTime
     {
         public int idcl = 0;
         public int idskidk = 0;
+        public int idsc = 0;
+        public int idsotr  = 0;
         public newsale(string idsale = "0"
             , string idclient = "0"
-            , string idskidka = "0"
-            , DateTime saledate = default(DateTime)
+            , string idskidka = "101"
+            , string idschedule = "0"
+            , string idsotrudnik = "0"
             )
         {
             InitializeComponent();
             idcl = Convert.ToInt32(idclient);
             idskidk =  Convert.ToInt32(idskidka);
+            idsc = Convert.ToInt32(idschedule);
             labelid.Text = idsale;
-            if (saledate == default(DateTime)) { dateTimePicker1.Value = DateTime.Today; }
-            else { dateTimePicker1.Value = saledate; }
+            idsotr = Convert.ToInt32(idsotrudnik);    
+            dateTimePicker1.Value = DateTime.Today; 
         }
 
         private void newsale_Load(object sender, EventArgs e)
@@ -39,6 +44,23 @@ namespace AdventureTime
             // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet1.Sotrudnik". При необходимости она может быть перемещена или удалена.
             this.sotrudnikTableAdapter.Fill(this.advTimeDataSet1.Sotrudnik);
             clientchoosebox.SelectedValue = idcl;
+            
+            if (labelid.Text != "0") {
+                DataRow CurSc = schedulefullTableAdapter1.GetDataBy(idsc)[0];
+                ChosenTour.chosentourdata = CurSc[9].ToString()
+                + ", c " + CurSc[1].ToString()
+                + " по " + CurSc[2].ToString() ;
+                ChosenTour.chosenprice = CurSc[8].ToString() ;
+                textBox1.Text = ChosenTour.chosentourdata;
+                PriceBox.Text = ChosenTour.chosenprice;
+                ChosenTour.SelPrc = (double)this.skidkaTableAdapter.percentqarry(idskidk);
+                EndPriceBox.Text = Convert.ToString(Convert.ToDouble(ChosenTour.chosenprice) - Convert.ToDouble(ChosenTour.chosenprice) * ChosenTour.SelPrc);
+            }
+            if (idsotr != 0)
+            {
+                SotrudnikBox.SelectedValue = idsotr;
+            }
+            else { SotrudnikBox.SelectedValue = Convert.ToInt32(LoggedUser.loggeduser); }
             skidkacombobox.SelectedValue = idskidk;
         }
 
@@ -72,20 +94,23 @@ namespace AdventureTime
         {
             if (labelid.Text == "0")
             {
-                this.saleTableAdapter1.NewSale(Convert.ToInt32(LoggedUser.loggeduser), Convert.ToInt32(ChosenTour.chosentourid),  Convert.ToInt32(clientchoosebox.SelectedValue)
-                       
-                    , Convert.ToInt32(skidkacombobox.SelectedValue), Convert.ToDecimal(EndPriceBox), dateTimePicker1.Value
+                this.saleTableAdapter1.NewSale( Convert.ToInt32(LoggedUser.loggeduser)
+                    , Convert.ToInt32(ChosenTour.chosentourid)
+                    ,  Convert.ToInt32(clientchoosebox.SelectedValue)
+                   , dateTimePicker1.Value
+                   , Convert.ToInt32(skidkacombobox.SelectedValue)
+                   , Convert.ToDecimal(EndPriceBox.Text)
                     );
             }
             else
             {
-                this.saleTableAdapter1.EditeSale( Convert.ToInt32(labelid.Text)
-                          , Convert.ToInt32(clientchoosebox.SelectedValue)
-                          , ChosenTour.chosentourid
-                          , Convert.ToInt32(skidkacombobox.SelectedValue)
-                          , Convert.ToInt32(EndPriceBox)
-                          , LoggedUser.loggeduser
-                          , dateTimePicker1.Value
+                this.saleTableAdapter1.EditSale(Convert.ToInt32(labelid.Text)
+                    , Convert.ToInt32(LoggedUser.loggeduser)
+                    , Convert.ToInt32(ChosenTour.chosentourid)
+                    , Convert.ToInt32(clientchoosebox.SelectedValue)
+                    , dateTimePicker1.Value
+                    , Convert.ToInt32(skidkacombobox.SelectedValue)
+                    , Convert.ToDecimal(EndPriceBox)
                      );
             }
             this.Close();
@@ -94,7 +119,7 @@ namespace AdventureTime
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
            ChosenTour.SelPrc  = (double)this.skidkaTableAdapter.percentqarry(Convert.ToInt32(skidkacombobox.SelectedValue));
-            EndPriceBox.Text = Convert.ToString(Convert.ToDouble(ChosenTour.chosenprice) -Convert.ToDouble(ChosenTour.chosenprice) * ChosenTour.SelPrc);
+            EndPriceBox.Text = Convert.ToString(Convert.ToDouble(ChosenTour.chosenprice) - Convert.ToDouble(ChosenTour.chosenprice) * ChosenTour.SelPrc);
           
         }
     }

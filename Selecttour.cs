@@ -20,7 +20,7 @@ namespace AdventureTime
 
         private void button1_Click(object sender, EventArgs e)
         {
-            newsale.ChosenTour.chosentourid = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            newsale.ChosenTour.chosentourid = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             newsale.ChosenTour.chosentourdata = dataGridView1.SelectedRows[0].Cells[2].Value.ToString() 
                 + ", c " + dataGridView1.SelectedRows[0].Cells[3].Value.ToString() 
                 + " по " + dataGridView1.SelectedRows[0].Cells[4].Value.ToString();

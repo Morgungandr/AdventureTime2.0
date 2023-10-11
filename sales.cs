@@ -35,5 +35,16 @@ namespace AdventureTime
             newsale clientsform = new newsale();
             clientsform.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            newsale clientsform = new newsale(
+                idsale: (dataGridView1.SelectedRows[0].Cells[0].Value.ToString())
+                , idschedule: (dataGridView1.SelectedRows[0].Cells[1].Value.ToString())
+                , idclient: (dataGridView1.SelectedRows[0].Cells[1].Value.ToString())
+                
+                );
+            clientsform.ShowDialog();
+        }
     }
 }
