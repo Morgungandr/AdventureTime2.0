@@ -37,8 +37,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sotrFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sotrFullTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.SotrFullTableAdapter();
             this.idsotrudnikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIOsotrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +51,8 @@
             this.pravaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotrFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sotrFullTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.SotrFullTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotrudnikBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -103,6 +103,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(91, 22);
             this.toolStripButton2.Text = "Редактировать";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // dataGridView1
             // 
@@ -129,18 +130,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(906, 422);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // sotrFullBindingSource
-            // 
-            this.sotrFullBindingSource.DataMember = "SotrFull";
-            this.sotrFullBindingSource.DataSource = this.advTimeDataSet;
-            // 
-            // sotrFullTableAdapter
-            // 
-            this.sotrFullTableAdapter.ClearBeforeFill = true;
             // 
             // idsotrudnikDataGridViewTextBoxColumn
             // 
@@ -177,7 +170,7 @@
             this.residenceDataGridViewTextBoxColumn.DataPropertyName = "residence";
             this.residenceDataGridViewTextBoxColumn.HeaderText = "Родной город";
             this.residenceDataGridViewTextBoxColumn.Name = "residenceDataGridViewTextBoxColumn";
-            this.residenceDataGridViewTextBoxColumn.Width = 101;
+            this.residenceDataGridViewTextBoxColumn.Width = 93;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
@@ -241,6 +234,15 @@
             this.salaryDataGridViewTextBoxColumn.HeaderText = "Зарплата";
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
             this.salaryDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // sotrFullBindingSource
+            // 
+            this.sotrFullBindingSource.DataMember = "SotrFull";
+            this.sotrFullBindingSource.DataSource = this.advTimeDataSet;
+            // 
+            // sotrFullTableAdapter
+            // 
+            this.sotrFullTableAdapter.ClearBeforeFill = true;
             // 
             // Sotrudnik
             // 

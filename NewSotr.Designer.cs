@@ -57,6 +57,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.postTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.PostTableAdapter();
             this.sotrudnikTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SotrudnikTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.prav = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
             this.SuspendLayout();
@@ -163,7 +165,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(31, 387);
+            this.label12.Location = new System.Drawing.Point(31, 413);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 13);
             this.label12.TabIndex = 0;
@@ -237,7 +239,7 @@
             this.PostchooseBox.DataSource = this.postBindingSource;
             this.PostchooseBox.DisplayMember = "post";
             this.PostchooseBox.FormattingEnabled = true;
-            this.PostchooseBox.Location = new System.Drawing.Point(113, 378);
+            this.PostchooseBox.Location = new System.Drawing.Point(113, 404);
             this.PostchooseBox.Name = "PostchooseBox";
             this.PostchooseBox.Size = new System.Drawing.Size(259, 21);
             this.PostchooseBox.TabIndex = 2;
@@ -255,7 +257,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(34, 415);
+            this.button1.Location = new System.Drawing.Point(32, 439);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -265,7 +267,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(297, 415);
+            this.button2.Location = new System.Drawing.Point(297, 441);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -281,11 +283,28 @@
             // 
             this.sotrudnikTableAdapter1.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 382);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Права";
+            // 
+            // prav
+            // 
+            this.prav.Location = new System.Drawing.Point(113, 374);
+            this.prav.Name = "prav";
+            this.prav.Size = new System.Drawing.Size(259, 20);
+            this.prav.TabIndex = 5;
+            // 
             // NewSotr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 450);
+            this.ClientSize = new System.Drawing.Size(395, 474);
+            this.Controls.Add(this.prav);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PostchooseBox);
@@ -303,6 +322,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
@@ -350,5 +370,7 @@
         private System.Windows.Forms.BindingSource postBindingSource;
         private AdvTimeDataSetTableAdapters.PostTableAdapter postTableAdapter;
         private AdvTimeDataSetTableAdapters.SotrudnikTableAdapter sotrudnikTableAdapter1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox prav;
     }
 }

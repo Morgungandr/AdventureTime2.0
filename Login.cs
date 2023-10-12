@@ -29,7 +29,9 @@ namespace AdventureTime
                 }
                 else
                 {
-                    LoggedUser.loggeduser = CurUser[2].ToString();
+                    LoggedUser.loggeduser = CurUser[0].ToString();
+                    LoggedUser.prava = CurUser[1].ToString();
+
 
                     this.Close();
                 }

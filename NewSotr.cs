@@ -26,6 +26,7 @@ namespace AdventureTime
             , string snils = ""
            , string login = ""
            , string password = ""
+            ,string prava = ""
            , string idpost = "0")
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace AdventureTime
             snil.Text =snils ;
             log.Text =login;
             pas.Text =password ;
+            prav.Text =prava ;
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -74,12 +76,13 @@ namespace AdventureTime
                             , snil.Text
                             , log.Text
                             , pas.Text
+                            , prav.Text
                             );
             }
             else
             {
-                this.sotrudnikTableAdapter1.EditSotr(Convert.ToInt32(labelid.Text)
-                            , Convert.ToInt32(PostchooseBox.SelectedValue)
+                this.sotrudnikTableAdapter1.EditSotr(Convert.ToInt32(labelid.Text),
+                            Convert.ToInt32(PostchooseBox.SelectedValue)
                             , fiosotr.Text
                             , gen.Text
                             , res.Text
@@ -88,7 +91,8 @@ namespace AdventureTime
                             , innn.Text
                             , snil.Text
                             , log.Text
-                            , pas.Text);
+                            , pas.Text
+                            , prav.Text);
             }
             this.Close();
         }

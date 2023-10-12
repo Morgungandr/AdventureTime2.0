@@ -22,16 +22,16 @@ namespace AdventureTime
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet1.SalesView1". При необходимости она может быть перемещена или удалена.
-            LoggedUser.loggeduser = "102";
-            //   Login form = new Login();
-            //   form.ShowDialog();
-            //  if (LoggedUser.loggeduser == "") {
-            //      System.Windows.Forms.Application.Exit();
-            //  }
+            //LoggedUser.loggeduser = "102";
+               Login form = new Login();
+               form.ShowDialog();
+              if (LoggedUser.loggeduser == "") {
+                  System.Windows.Forms.Application.Exit();
+              }
 
             salesViewTableAdapter1.Fill(advTimeDataSet.SalesView);
-            
 
+            if (LoggedUser.prava == "admin") { сотрудникиToolStripMenuItem.Visible = true; }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -140,6 +140,7 @@ namespace AdventureTime
         {
             Sotrudnik clientsform = new Sotrudnik();
             clientsform.ShowDialog();
+            
         }
 
         private void постыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,5 +151,6 @@ namespace AdventureTime
     public static class LoggedUser
     {
         public static string loggeduser = "";
+        public static string prava = "";
     }
 }

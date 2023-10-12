@@ -36,6 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.selectUserCommandTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SelectUserCommandTableAdapter();
             this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
+            this.sotrudnikTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SotrudnikTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +114,11 @@
             this.advTimeDataSet1.DataSetName = "AdvTimeDataSet";
             this.advTimeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Form2
+            // sotrudnikTableAdapter1
+            // 
+            this.sotrudnikTableAdapter1.ClearBeforeFill = true;
+            // 
+            // Login
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,7 +132,7 @@
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Вход в систему";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -147,5 +152,6 @@
         private System.Windows.Forms.Button button2;
         private AdvTimeDataSetTableAdapters.SelectUserCommandTableAdapter selectUserCommandTableAdapter1;
         private AdvTimeDataSet advTimeDataSet1;
+        private AdvTimeDataSetTableAdapters.SotrudnikTableAdapter sotrudnikTableAdapter1;
     }
 }

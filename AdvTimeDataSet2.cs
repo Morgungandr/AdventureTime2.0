@@ -60,6 +60,10 @@
 
 namespace AdventureTime.AdvTimeDataSetTableAdapters
 {
+    partial class SotrudnikTableAdapter
+    {
+    }
+
     partial class OperatorsTableAdapter
     {
     }

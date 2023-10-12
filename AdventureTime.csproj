@@ -102,6 +102,12 @@
     <Compile Include="NewSotr.Designer.cs">
       <DependentUpon>NewSotr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sotrudnik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewSotr.resx">
       <DependentUpon>NewSotr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sotrudnik.resx">
       <DependentUpon>Sotrudnik.cs</DependentUpon>
