@@ -110,6 +110,42 @@ namespace AdventureTime
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            this.salesViewBindingSource.Filter = "FIO LIKE '%" + filterboxcl.Text + "%'";
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ClientSearch_Click_2(object sender, EventArgs e)
+        {
+            this.salesViewBindingSource.Filter = "FIO LIKE '%" + filterboxcl.Text + "%'";
+        }
+
+        private void TourSearch_Click_2(object sender, EventArgs e)
+        {
+            this.salesViewBindingSource.Filter = "tourname LIKE '%" + filterboxtour.Text + "%'";
+        }
+
+        private void SotrSearch_Click_2(object sender, EventArgs e)
+        {
+            this.salesViewBindingSource.Filter = "FIOsotr LIKE '%" + filterboxsotr.Text + "%'";
+        }
+
+        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sotrudnik clientsform = new Sotrudnik();
+            clientsform.ShowDialog();
+        }
+
+        private void постыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public static class LoggedUser
     {

@@ -96,6 +96,18 @@
     <Compile Include="NewClient.Designer.cs">
       <DependentUpon>NewClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewSotr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSotr.Designer.cs">
+      <DependentUpon>NewSotr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sotrudnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sotrudnik.Designer.cs">
+      <DependentUpon>Sotrudnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewClient.resx">
       <DependentUpon>NewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSotr.resx">
+      <DependentUpon>NewSotr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sotrudnik.resx">
+      <DependentUpon>Sotrudnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tours.resx">
       <DependentUpon>Tours.cs</DependentUpon>

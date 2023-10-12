@@ -44,5 +44,10 @@ namespace AdventureTime
             clientsform.ShowDialog();
             this.schedulefullTableAdapter.Fill(this.advTimeDataSet2.Schedulefull);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.schedulefullBindingSource.Filter = "tourname LIKE '%" + filterboxtour.Text + "%'";
+        }
     }
 }

@@ -51,6 +51,8 @@
             this.vidturanameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.filterboxtour = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.schedulefullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet1)).BeginInit();
@@ -230,11 +232,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(433, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 21);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Тур";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // filterboxtour
+            // 
+            this.filterboxtour.Location = new System.Drawing.Point(135, 12);
+            this.filterboxtour.Name = "filterboxtour";
+            this.filterboxtour.Size = new System.Drawing.Size(292, 20);
+            this.filterboxtour.TabIndex = 5;
+            this.filterboxtour.TextChanged += new System.EventHandler(this.filterboxtour_TextChanged);
+            // 
             // Selecttour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 468);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.filterboxtour);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Selecttour";
@@ -246,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -273,5 +297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vidturanameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn operatornameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox filterboxtour;
     }
 }

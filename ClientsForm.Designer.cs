@@ -343,6 +343,7 @@
             this.filterbox.Name = "filterbox";
             this.filterbox.Size = new System.Drawing.Size(421, 20);
             this.filterbox.TabIndex = 3;
+            this.filterbox.TextChanged += new System.EventHandler(this.filterbox_TextChanged);
             // 
             // search
             // 

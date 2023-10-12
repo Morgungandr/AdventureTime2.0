@@ -78,5 +78,10 @@ namespace AdventureTime
             
             this.bindingSource1.Filter = "FIO LIKE '%"+ filterbox.Text +"%'";
         }
+
+        private void filterbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

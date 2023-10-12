@@ -46,5 +46,15 @@ namespace AdventureTime
             // TODO: данная строка кода позволяет загрузить данные в таблицу "advTimeDataSet.Schedule". При необходимости она может быть перемещена или удалена.
             this.scheduleTableAdapter.Fill(this.advTimeDataSet2.Schedule);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.schedulefullBindingSource.Filter = "tourname LIKE '%" + filterboxtour.Text + "%'";
+        }
+
+        private void filterboxtour_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

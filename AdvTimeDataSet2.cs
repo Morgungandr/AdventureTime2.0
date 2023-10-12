@@ -4,6 +4,10 @@
 
     partial class AdvTimeDataSet
     {
+        partial class SotrFullDataTable
+        {
+        }
+
         partial class SelectUserCommandDataTable
         {
         }

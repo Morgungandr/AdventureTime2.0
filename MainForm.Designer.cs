@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ClientSearch = new System.Windows.Forms.Button();
+            this.filterboxsotr = new System.Windows.Forms.TextBox();
+            this.filterboxtour = new System.Windows.Forms.TextBox();
+            this.filterboxcl = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +44,12 @@
             this.видыТуровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.питаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.операторыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.продаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.турыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.клиентыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.возвратToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,12 +74,9 @@
             this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
             this.salesViewTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SalesViewTableAdapter();
-            this.продаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.турыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.клиентыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.возвратToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сотрудникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.постыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,14 +97,87 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer1.Panel1.Controls.Add(this.button2);
+            this.splitContainer1.Panel1.Controls.Add(this.button3);
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.ClientSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.filterboxsotr);
+            this.splitContainer1.Panel1.Controls.Add(this.filterboxtour);
+            this.splitContainer1.Panel1.Controls.Add(this.filterboxcl);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(1085, 476);
-            this.splitContainer1.SplitterDistance = 82;
+            this.splitContainer1.SplitterDistance = 59;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(1091, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(53, 21);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Тур";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Location = new System.Drawing.Point(998, 28);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(68, 21);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Сотрудник";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.SotrSearch_Click_2);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(656, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 21);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Тур";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.TourSearch_Click_2);
+            // 
+            // ClientSearch
+            // 
+            this.ClientSearch.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSearch.Location = new System.Drawing.Point(299, 27);
+            this.ClientSearch.Name = "ClientSearch";
+            this.ClientSearch.Size = new System.Drawing.Size(53, 20);
+            this.ClientSearch.TabIndex = 4;
+            this.ClientSearch.Text = "Клиент";
+            this.ClientSearch.UseVisualStyleBackColor = false;
+            this.ClientSearch.Click += new System.EventHandler(this.ClientSearch_Click_2);
+            // 
+            // filterboxsotr
+            // 
+            this.filterboxsotr.Location = new System.Drawing.Point(700, 28);
+            this.filterboxsotr.Name = "filterboxsotr";
+            this.filterboxsotr.Size = new System.Drawing.Size(292, 20);
+            this.filterboxsotr.TabIndex = 3;
+            // 
+            // filterboxtour
+            // 
+            this.filterboxtour.Location = new System.Drawing.Point(358, 28);
+            this.filterboxtour.Name = "filterboxtour";
+            this.filterboxtour.Size = new System.Drawing.Size(292, 20);
+            this.filterboxtour.TabIndex = 3;
+            // 
+            // filterboxcl
+            // 
+            this.filterboxcl.Location = new System.Drawing.Point(3, 27);
+            this.filterboxcl.Name = "filterboxcl";
+            this.filterboxcl.Size = new System.Drawing.Size(290, 20);
+            this.filterboxcl.TabIndex = 3;
             // 
             // menuStrip1
             // 
@@ -120,7 +203,8 @@
             this.турыToolStripMenuItem,
             this.видыТуровToolStripMenuItem,
             this.питаниеToolStripMenuItem,
-            this.операторыToolStripMenuItem});
+            this.операторыToolStripMenuItem,
+            this.сотрудникиToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -129,37 +213,82 @@
             // клиентыToolStripMenuItem
             // 
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // турыToolStripMenuItem
             // 
             this.турыToolStripMenuItem.Name = "турыToolStripMenuItem";
-            this.турыToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.турыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.турыToolStripMenuItem.Text = "Туры";
             this.турыToolStripMenuItem.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // видыТуровToolStripMenuItem
             // 
             this.видыТуровToolStripMenuItem.Name = "видыТуровToolStripMenuItem";
-            this.видыТуровToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.видыТуровToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.видыТуровToolStripMenuItem.Text = "Виды туров";
             this.видыТуровToolStripMenuItem.Click += new System.EventHandler(this.видыТуровToolStripMenuItem_Click);
             // 
             // питаниеToolStripMenuItem
             // 
             this.питаниеToolStripMenuItem.Name = "питаниеToolStripMenuItem";
-            this.питаниеToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.питаниеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.питаниеToolStripMenuItem.Text = "Питание";
             this.питаниеToolStripMenuItem.Click += new System.EventHandler(this.питаниеToolStripMenuItem_Click);
             // 
             // операторыToolStripMenuItem
             // 
             this.операторыToolStripMenuItem.Name = "операторыToolStripMenuItem";
-            this.операторыToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.операторыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.операторыToolStripMenuItem.Text = "Операторы";
             this.операторыToolStripMenuItem.Click += new System.EventHandler(this.операторыToolStripMenuItem_Click);
+            // 
+            // расписаниеToolStripMenuItem
+            // 
+            this.расписаниеToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
+            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.расписаниеToolStripMenuItem.Text = "Расписание";
+            this.расписаниеToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // продаToolStripMenuItem
+            // 
+            this.продаToolStripMenuItem.Name = "продаToolStripMenuItem";
+            this.продаToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.продаToolStripMenuItem.Text = "Продажа";
+            this.продаToolStripMenuItem.Click += new System.EventHandler(this.salebutton_Click);
+            // 
+            // редактироватьToolStripMenuItem
+            // 
+            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // турыToolStripMenuItem1
+            // 
+            this.турыToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.турыToolStripMenuItem1.Name = "турыToolStripMenuItem1";
+            this.турыToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
+            this.турыToolStripMenuItem1.Text = "Туры";
+            this.турыToolStripMenuItem1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // клиентыToolStripMenuItem1
+            // 
+            this.клиентыToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.клиентыToolStripMenuItem1.Name = "клиентыToolStripMenuItem1";
+            this.клиентыToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.клиентыToolStripMenuItem1.Text = "Клиенты";
+            this.клиентыToolStripMenuItem1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // возвратToolStripMenuItem
+            // 
+            this.возвратToolStripMenuItem.Name = "возвратToolStripMenuItem";
+            this.возвратToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.возвратToolStripMenuItem.Text = "Возврат";
+            this.возвратToolStripMenuItem.Click += new System.EventHandler(this.возвратToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -202,7 +331,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1085, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(1085, 413);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -389,50 +518,29 @@
             // 
             this.salesViewTableAdapter1.ClearBeforeFill = true;
             // 
-            // продаToolStripMenuItem
+            // сотрудникиToolStripMenuItem
             // 
-            this.продаToolStripMenuItem.Name = "продаToolStripMenuItem";
-            this.продаToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.продаToolStripMenuItem.Text = "Продажа";
-            this.продаToolStripMenuItem.Click += new System.EventHandler(this.salebutton_Click);
+            this.сотрудникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сотрудникиToolStripMenuItem1,
+            this.постыToolStripMenuItem});
+            this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
-            // редактироватьToolStripMenuItem
+            // сотрудникиToolStripMenuItem1
             // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
-            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
+            this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
-            // расписаниеToolStripMenuItem
+            // постыToolStripMenuItem
             // 
-            this.расписаниеToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
-            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.расписаниеToolStripMenuItem.Text = "Расписание";
-            this.расписаниеToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // турыToolStripMenuItem1
-            // 
-            this.турыToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.турыToolStripMenuItem1.Name = "турыToolStripMenuItem1";
-            this.турыToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
-            this.турыToolStripMenuItem1.Text = "Туры";
-            this.турыToolStripMenuItem1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // клиентыToolStripMenuItem1
-            // 
-            this.клиентыToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.клиентыToolStripMenuItem1.Name = "клиентыToolStripMenuItem1";
-            this.клиентыToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
-            this.клиентыToolStripMenuItem1.Text = "Клиенты";
-            this.клиентыToolStripMenuItem1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // возвратToolStripMenuItem
-            // 
-            this.возвратToolStripMenuItem.Name = "возвратToolStripMenuItem";
-            this.возвратToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.возвратToolStripMenuItem.Text = "Возврат";
-            this.возвратToolStripMenuItem.Click += new System.EventHandler(this.возвратToolStripMenuItem_Click);
+            this.постыToolStripMenuItem.Name = "постыToolStripMenuItem";
+            this.постыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.постыToolStripMenuItem.Text = "Посты";
+            this.постыToolStripMenuItem.Click += new System.EventHandler(this.постыToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -501,6 +609,16 @@
         private System.Windows.Forms.ToolStripMenuItem турыToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem возвратToolStripMenuItem;
+        private System.Windows.Forms.Button ClientSearch;
+        private System.Windows.Forms.TextBox filterboxcl;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox filterboxtour;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox filterboxsotr;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem постыToolStripMenuItem;
     }
 }
 
