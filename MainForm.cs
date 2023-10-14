@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AdventureTime
 {
@@ -95,11 +96,11 @@ namespace AdventureTime
         private void button3_Click(object sender, EventArgs e)
         {
             newsale clientsform = new newsale(
-                idsale: (dataGridView1.SelectedRows[0].Cells[12].Value.ToString())
-                , idschedule: (dataGridView1.SelectedRows[0].Cells[13].Value.ToString())
-                , idclient: (dataGridView1.SelectedRows[0].Cells[16].Value.ToString())
-                , idsotrudnik:(dataGridView1.SelectedRows[0].Cells[15].Value.ToString())
-                , idskidka: (dataGridView1.SelectedRows[0].Cells[17].Value.ToString())
+                idsale: (dataGridView1.SelectedRows[0].Cells[14].Value.ToString())
+                , idschedule: (dataGridView1.SelectedRows[0].Cells[15].Value.ToString())
+                , idclient: (dataGridView1.SelectedRows[0].Cells[18].Value.ToString())
+                , idsotrudnik:(dataGridView1.SelectedRows[0].Cells[17].Value.ToString())
+                , idskidka: (dataGridView1.SelectedRows[0].Cells[19].Value.ToString())
                 );
             clientsform.ShowDialog();
             salesViewTableAdapter1.Fill(advTimeDataSet.SalesView);
@@ -133,7 +134,32 @@ namespace AdventureTime
 
         private void SotrSearch_Click_2(object sender, EventArgs e)
         {
-            this.salesViewBindingSource.Filter = "FIOsotr LIKE '%" + filterboxsotr.Text + "%'";
+            List<string> filterParts = new List<string>();
+            if (filterboxcl.Text != "" && filterboxcl.Text != "Клиент")
+            {
+                filterParts.Add("FIO LIKE '%" + filterboxcl.Text + "%'");
+            }
+            if (filterboxtour.Text != "" && filterboxtour.Text != "Тур")
+            {
+                filterParts.Add("tourname LIKE '%" + filterboxtour.Text + "%'");
+            }
+            if (filterboxsotr.Text != "" && filterboxsotr.Text != "Сотрудник")
+            {
+                filterParts.Add("FIOsotr LIKE '%" + filterboxsotr.Text + "%'");
+            }
+            filterParts.Add(string.Format(" dates >= '{0:dd.MM.yyyy}' AND dates <= '{1:dd.MM.yyyy}'"
+                , dtPickerSell1.Value.ToShortDateString(), dtPickerSell2.Value.ToShortDateString()));
+            filterParts.Add(string.Format(" dates >= '{0:dd.MM.yyyy}' AND dates <= '{1:dd.MM.yyyy}'"
+                , dtPickerSell1.Value.ToShortDateString(), dtPickerSell2.Value.ToShortDateString()));
+            filterParts.Add(string.Format(" dates >= '{0:dd.MM.yyyy}' AND dates <= '{1:dd.MM.yyyy}'"
+                , dtPickerSell1.Value.ToShortDateString(), dtPickerSell2.Value.ToShortDateString()));
+            string filter = string.Join(" AND ", filterParts);
+            this.salesViewBindingSource.Filter = filter;
+
+
+
+
+            
         }
 
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,7 +171,81 @@ namespace AdventureTime
 
         private void постыToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Post clientsform = new Post();
+            clientsform.ShowDialog();
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterboxcl_Enter(object sender, EventArgs e)
+        {
+            filterboxcl.ForeColor = Color.Black;
+            filterboxcl.Text = "";
+            filterboxcl.Enter -= filterboxcl_Enter;
+            filterboxcl.Leave += filterboxcl_Leave;
+            filterboxcl.TextChanged += filterboxcl_TextChanged;
+        }
+
+        private void filterboxcl_Leave(object sender, EventArgs e)
+        {
+            filterboxcl.ForeColor = Color.Silver;
+            filterboxcl.Text = "Клиент";
+            filterboxcl.Enter += filterboxcl_Enter;
+        }
+
+        private void filterboxcl_TextChanged(object sender, EventArgs e)
+        {
+            filterboxcl.Leave -= filterboxcl_Leave;
+            filterboxcl.TextChanged -= filterboxcl_TextChanged;
+        }
+
+        private void filterboxtour_TextChanged(object sender, EventArgs e)
+        {
+            filterboxtour.Leave -= filterboxtour_Leave;
+            filterboxtour.TextChanged -= filterboxtour_TextChanged;
+        }
+
+        private void filterboxtour_Enter(object sender, EventArgs e)
+        {
+            filterboxtour.ForeColor = Color.Black;
+            filterboxtour.Text = "";
+            filterboxtour.Enter -= filterboxtour_Enter;
+            filterboxtour.Leave += filterboxtour_Leave;
+            filterboxtour.TextChanged += filterboxtour_TextChanged;
+        }
+
+        
+
+        private void filterboxtour_Leave(object sender, EventArgs e)
+        {
+            filterboxtour.ForeColor = Color.Silver;
+            filterboxtour.Text = "Тур";
+            filterboxtour.Enter += filterboxtour_Enter;
+        }
+
+        private void filterboxsotr_Enter(object sender, EventArgs e)
+        {
+            filterboxsotr.ForeColor = Color.Black;
+            filterboxsotr.Text = "";
+            filterboxsotr.Enter -= filterboxsotr_Enter;
+            filterboxsotr.Leave += filterboxsotr_Leave;
+            filterboxsotr.TextChanged += filterboxsotr_TextChanged;
+        }
+
+        private void filterboxsotr_Leave(object sender, EventArgs e)
+        {
+            filterboxsotr.ForeColor = Color.Silver;
+            filterboxsotr.Text = "Сотрудник";
+            filterboxsotr.Enter += filterboxsotr_Enter;
+        }
+
+        private void filterboxsotr_TextChanged(object sender, EventArgs e)
+        {
+            filterboxsotr.Leave -= filterboxsotr_Leave;
+            filterboxsotr.TextChanged -= filterboxsotr_TextChanged;
         }
     }
     public static class LoggedUser

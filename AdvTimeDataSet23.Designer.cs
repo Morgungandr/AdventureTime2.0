@@ -5498,6 +5498,10 @@ namespace AdventureTime {
             
             private global::System.Data.DataColumn columnidtura;
             
+            private global::System.Data.DataColumn columndateofdispatch;
+            
+            private global::System.Data.DataColumn columnreturndate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SalesViewDataTable() {
@@ -5693,6 +5697,22 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dateofdispatchColumn {
+                get {
+                    return this.columndateofdispatch;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn returndateColumn {
+                get {
+                    return this.columnreturndate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5748,7 +5768,9 @@ namespace AdventureTime {
                         int idschedule, 
                         int idvidtura, 
                         int idpitanie, 
-                        int idtura) {
+                        int idtura, 
+                        System.DateTime dateofdispatch, 
+                        System.DateTime returndate) {
                 SalesViewRow rowSalesViewRow = ((SalesViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FIO,
@@ -5770,7 +5792,9 @@ namespace AdventureTime {
                         idschedule,
                         idvidtura,
                         idpitanie,
-                        idtura};
+                        idtura,
+                        dateofdispatch,
+                        returndate};
                 rowSalesViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalesViewRow);
                 return rowSalesViewRow;
@@ -5827,6 +5851,8 @@ namespace AdventureTime {
                 this.columnidvidtura = base.Columns["idvidtura"];
                 this.columnidpitanie = base.Columns["idpitanie"];
                 this.columnidtura = base.Columns["idtura"];
+                this.columndateofdispatch = base.Columns["dateofdispatch"];
+                this.columnreturndate = base.Columns["returndate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5872,6 +5898,10 @@ namespace AdventureTime {
                 base.Columns.Add(this.columnidpitanie);
                 this.columnidtura = new global::System.Data.DataColumn("idtura", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidtura);
+                this.columndateofdispatch = new global::System.Data.DataColumn("dateofdispatch", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateofdispatch);
+                this.columnreturndate = new global::System.Data.DataColumn("returndate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreturndate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidsotrudnik,
                                 this.columnidclient,
@@ -12218,6 +12248,38 @@ namespace AdventureTime {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime dateofdispatch {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSalesView.dateofdispatchColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'dateofdispatch\' в таблице \'SalesView\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalesView.dateofdispatchColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime returndate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSalesView.returndateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'returndate\' в таблице \'SalesView\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalesView.returndateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFIONull() {
                 return this.IsNull(this.tableSalesView.FIOColumn);
             }
@@ -12358,6 +12420,30 @@ namespace AdventureTime {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetfinalpriceNull() {
                 this[this.tableSalesView.finalpriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdateofdispatchNull() {
+                return this.IsNull(this.tableSalesView.dateofdispatchColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdateofdispatchNull() {
+                this[this.tableSalesView.dateofdispatchColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsreturndateNull() {
+                return this.IsNull(this.tableSalesView.returndateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetreturndateNull() {
+                this[this.tableSalesView.returndateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -20400,20 +20486,20 @@ SELECT idvidtura, vidturaname, vidturaopis FROM Vidtura WHERE (idvidtura = @idvi
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[View_1] ([dateofdispatch], [dates], [departurecity], [tourprice], [tourname], [maxadult], [maxchild], [duration], [country], [operatorname], [pitaniatip], [vidturaname], [idsale]) VALUES (@dateofdispatch, @dates, @departurecity, @tourprice, @tourname, @maxadult, @maxchild, @duration, @country, @operatorname, @pitaniatip, @vidturaname, @idsale)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [View_1] ([dateofdispatch], [dates], [departurecity], [tourprice], [tourname], [maxadult], [maxchild], [duration], [country], [operatorname], [pitaniatip], [vidturaname], [idsale]) VALUES (@dateofdispatch, @dates, @departurecity, @tourprice, @tourname, @maxadult, @maxchild, @duration, @country, @operatorname, @pitaniatip, @vidturaname, @idsale)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofdispatch", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateofdispatch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dates", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dates", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@departurecity", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "departurecity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@departurecity", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "departurecity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tourprice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tourprice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tourname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tourname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tourname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tourname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maxadult", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxadult", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maxchild", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxchild", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maxchild", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxchild", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@country", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operatorname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operatorname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pitaniatip", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pitaniatip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vidturaname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vidturaname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@country", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operatorname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operatorname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pitaniatip", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pitaniatip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vidturaname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vidturaname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idsale", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idsale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20430,9 +20516,9 @@ SELECT idvidtura, vidturaname, vidturaopis FROM Vidtura WHERE (idvidtura = @idvi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT dateofdispatch, dates, departurecity, tourprice, tourname, maxadult, maxch" +
-                "ild, duration, country, operatorname, pitaniatip, vidturaname, idsale FROM dbo.V" +
-                "iew_1";
+            this._commandCollection[0].CommandText = "SELECT        dateofdispatch, dates, departurecity, tourprice, tourname, maxadult" +
+                ", maxchild, duration, country, operatorname, pitaniatip, vidturaname, idsale\r\nFR" +
+                "OM            View_1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20725,6 +20811,8 @@ SELECT idvidtura, vidturaname, vidturaopis FROM Vidtura WHERE (idvidtura = @idvi
             tableMapping.ColumnMappings.Add("idvidtura", "idvidtura");
             tableMapping.ColumnMappings.Add("idpitanie", "idpitanie");
             tableMapping.ColumnMappings.Add("idtura", "idtura");
+            tableMapping.ColumnMappings.Add("dateofdispatch", "dateofdispatch");
+            tableMapping.ColumnMappings.Add("returndate", "returndate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -20741,10 +20829,9 @@ SELECT idvidtura, vidturaname, vidturaopis FROM Vidtura WHERE (idvidtura = @idvi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        FIO, phone, dates, skidkaname, FIOsotr, vidturaname, pitaniatip, to" +
-                "urname, departurecity, duration, country, finalprice, idsotrudnik, idclient, ids" +
-                "kidka, idsale, idschedule, idvidtura, idpitanie, idtura\r\nFROM            SalesVi" +
-                "ew";
+            this._commandCollection[0].CommandText = @"SELECT        FIO, phone, dates, skidkaname, FIOsotr, vidturaname, pitaniatip, tourname, departurecity, duration, country, finalprice, idsotrudnik, idclient, idskidka, idsale, idschedule, idvidtura, idpitanie, idtura, dateofdispatch, 
+                         returndate
+FROM            SalesView";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

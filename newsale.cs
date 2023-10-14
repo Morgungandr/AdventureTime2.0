@@ -110,7 +110,7 @@ namespace AdventureTime
                     , Convert.ToInt32(clientchoosebox.SelectedValue)
                     , dateTimePicker1.Value
                     , Convert.ToInt32(skidkacombobox.SelectedValue)
-                    , Convert.ToDecimal(EndPriceBox)
+                    , Convert.ToDecimal(EndPriceBox.Text)
                      );
             }
             this.Close();

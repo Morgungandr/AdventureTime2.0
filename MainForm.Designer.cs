@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.dtPickerSell1 = new System.Windows.Forms.DateTimePicker();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtPickerSell2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ClientSearch = new System.Windows.Forms.Button();
             this.filterboxsotr = new System.Windows.Forms.TextBox();
             this.filterboxtour = new System.Windows.Forms.TextBox();
             this.filterboxcl = new System.Windows.Forms.TextBox();
@@ -63,6 +67,8 @@
             this.vidturanameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pitaniatipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateofdispatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returndate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departurecityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +83,9 @@
             this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
             this.salesViewTableAdapter1 = new AdventureTime.AdvTimeDataSetTableAdapters.SalesViewTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,6 +95,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dtPickerSell1
+            // 
+            this.dtPickerSell1.CustomFormat = "";
+            this.dtPickerSell1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPickerSell1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.dtPickerSell1.Location = new System.Drawing.Point(137, 52);
+            this.dtPickerSell1.Name = "dtPickerSell1";
+            this.dtPickerSell1.Size = new System.Drawing.Size(74, 20);
+            this.dtPickerSell1.TabIndex = 5;
+            this.dtPickerSell1.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // splitContainer1
             // 
@@ -97,10 +117,17 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker6);
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker4);
+            this.splitContainer1.Panel1.Controls.Add(this.dtPickerSell2);
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker5);
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker3);
+            this.splitContainer1.Panel1.Controls.Add(this.dtPickerSell1);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.ClientSearch);
             this.splitContainer1.Panel1.Controls.Add(this.filterboxsotr);
             this.splitContainer1.Panel1.Controls.Add(this.filterboxtour);
             this.splitContainer1.Panel1.Controls.Add(this.filterboxcl);
@@ -111,8 +138,53 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(1085, 476);
-            this.splitContainer1.SplitterDistance = 59;
+            this.splitContainer1.SplitterDistance = 79;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker6.Location = new System.Drawing.Point(815, 53);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(74, 20);
+            this.dateTimePicker6.TabIndex = 5;
+            this.dateTimePicker6.Value = new System.DateTime(2040, 12, 31, 0, 0, 0, 0);
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(517, 52);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(74, 20);
+            this.dateTimePicker4.TabIndex = 5;
+            this.dateTimePicker4.Value = new System.DateTime(2040, 12, 31, 0, 0, 0, 0);
+            // 
+            // dtPickerSell2
+            // 
+            this.dtPickerSell2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPickerSell2.Location = new System.Drawing.Point(217, 52);
+            this.dtPickerSell2.Name = "dtPickerSell2";
+            this.dtPickerSell2.Size = new System.Drawing.Size(74, 20);
+            this.dtPickerSell2.TabIndex = 5;
+            this.dtPickerSell2.Value = new System.DateTime(2040, 12, 31, 0, 0, 0, 0);
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker5.Location = new System.Drawing.Point(735, 53);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(74, 20);
+            this.dateTimePicker5.TabIndex = 5;
+            this.dateTimePicker5.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(437, 52);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(74, 20);
+            this.dateTimePicker3.TabIndex = 5;
+            this.dateTimePicker3.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // button2
             // 
@@ -128,56 +200,50 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(998, 28);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(910, 26);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 21);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Сотрудник";
+            this.button3.Text = "Поиск";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.SotrSearch_Click_2);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(656, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 21);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Тур";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.TourSearch_Click_2);
-            // 
-            // ClientSearch
-            // 
-            this.ClientSearch.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSearch.Location = new System.Drawing.Point(299, 27);
-            this.ClientSearch.Name = "ClientSearch";
-            this.ClientSearch.Size = new System.Drawing.Size(53, 20);
-            this.ClientSearch.TabIndex = 4;
-            this.ClientSearch.Text = "Клиент";
-            this.ClientSearch.UseVisualStyleBackColor = false;
-            this.ClientSearch.Click += new System.EventHandler(this.ClientSearch_Click_2);
-            // 
             // filterboxsotr
             // 
-            this.filterboxsotr.Location = new System.Drawing.Point(700, 28);
+            this.filterboxsotr.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.filterboxsotr.Location = new System.Drawing.Point(597, 27);
             this.filterboxsotr.Name = "filterboxsotr";
             this.filterboxsotr.Size = new System.Drawing.Size(292, 20);
             this.filterboxsotr.TabIndex = 3;
+            this.filterboxsotr.Text = "Сотрудник";
+            this.filterboxsotr.TextChanged += new System.EventHandler(this.filterboxsotr_TextChanged);
+            this.filterboxsotr.Enter += new System.EventHandler(this.filterboxsotr_Enter);
+            this.filterboxsotr.Leave += new System.EventHandler(this.filterboxsotr_Leave);
             // 
             // filterboxtour
             // 
-            this.filterboxtour.Location = new System.Drawing.Point(358, 28);
+            this.filterboxtour.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.filterboxtour.Location = new System.Drawing.Point(299, 27);
             this.filterboxtour.Name = "filterboxtour";
             this.filterboxtour.Size = new System.Drawing.Size(292, 20);
             this.filterboxtour.TabIndex = 3;
+            this.filterboxtour.Text = "Тур";
+            this.filterboxtour.TextChanged += new System.EventHandler(this.filterboxtour_TextChanged);
+            this.filterboxtour.Enter += new System.EventHandler(this.filterboxtour_Enter);
+            this.filterboxtour.Leave += new System.EventHandler(this.filterboxtour_Leave);
             // 
             // filterboxcl
             // 
+            this.filterboxcl.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.filterboxcl.Location = new System.Drawing.Point(3, 27);
             this.filterboxcl.Name = "filterboxcl";
             this.filterboxcl.Size = new System.Drawing.Size(290, 20);
             this.filterboxcl.TabIndex = 3;
+            this.filterboxcl.Text = "Клиент";
+            this.filterboxcl.TextChanged += new System.EventHandler(this.filterboxcl_TextChanged);
+            this.filterboxcl.Enter += new System.EventHandler(this.filterboxcl_Enter);
+            this.filterboxcl.Leave += new System.EventHandler(this.filterboxcl_Leave);
             // 
             // menuStrip1
             // 
@@ -213,35 +279,35 @@
             // клиентыToolStripMenuItem
             // 
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // турыToolStripMenuItem
             // 
             this.турыToolStripMenuItem.Name = "турыToolStripMenuItem";
-            this.турыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.турыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.турыToolStripMenuItem.Text = "Туры";
             this.турыToolStripMenuItem.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // видыТуровToolStripMenuItem
             // 
             this.видыТуровToolStripMenuItem.Name = "видыТуровToolStripMenuItem";
-            this.видыТуровToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.видыТуровToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.видыТуровToolStripMenuItem.Text = "Виды туров";
             this.видыТуровToolStripMenuItem.Click += new System.EventHandler(this.видыТуровToolStripMenuItem_Click);
             // 
             // питаниеToolStripMenuItem
             // 
             this.питаниеToolStripMenuItem.Name = "питаниеToolStripMenuItem";
-            this.питаниеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.питаниеToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.питаниеToolStripMenuItem.Text = "Питание";
             this.питаниеToolStripMenuItem.Click += new System.EventHandler(this.питаниеToolStripMenuItem_Click);
             // 
             // операторыToolStripMenuItem
             // 
             this.операторыToolStripMenuItem.Name = "операторыToolStripMenuItem";
-            this.операторыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.операторыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.операторыToolStripMenuItem.Text = "Операторы";
             this.операторыToolStripMenuItem.Click += new System.EventHandler(this.операторыToolStripMenuItem_Click);
             // 
@@ -251,7 +317,7 @@
             this.сотрудникиToolStripMenuItem1,
             this.постыToolStripMenuItem});
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
-            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem.Visible = false;
             this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
@@ -259,14 +325,14 @@
             // сотрудникиToolStripMenuItem1
             // 
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
             // постыToolStripMenuItem
             // 
             this.постыToolStripMenuItem.Name = "постыToolStripMenuItem";
-            this.постыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.постыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.постыToolStripMenuItem.Text = "Посты";
             this.постыToolStripMenuItem.Click += new System.EventHandler(this.постыToolStripMenuItem_Click);
             // 
@@ -332,6 +398,8 @@
             this.vidturanameDataGridViewTextBoxColumn,
             this.pitaniatipDataGridViewTextBoxColumn,
             this.countryDataGridViewTextBoxColumn,
+            this.dateofdispatch,
+            this.returndate,
             this.departurecityDataGridViewTextBoxColumn,
             this.durationDataGridViewTextBoxColumn,
             this.finalprice,
@@ -356,7 +424,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1085, 413);
+            this.dataGridView1.Size = new System.Drawing.Size(1085, 393);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -431,6 +499,22 @@
             this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
             this.countryDataGridViewTextBoxColumn.ReadOnly = true;
             this.countryDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // dateofdispatch
+            // 
+            this.dateofdispatch.DataPropertyName = "dateofdispatch";
+            this.dateofdispatch.HeaderText = "Дата отправки";
+            this.dateofdispatch.Name = "dateofdispatch";
+            this.dateofdispatch.ReadOnly = true;
+            this.dateofdispatch.Width = 99;
+            // 
+            // returndate
+            // 
+            this.returndate.DataPropertyName = "returndate";
+            this.returndate.HeaderText = "Дата возвращения";
+            this.returndate.Name = "returndate";
+            this.returndate.ReadOnly = true;
+            this.returndate.Width = 119;
             // 
             // departurecityDataGridViewTextBoxColumn
             // 
@@ -543,6 +627,33 @@
             // 
             this.salesViewTableAdapter1.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Дата продажи";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(306, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Дата отправления";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(609, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Дата возвращения";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +695,25 @@
         private System.Windows.Forms.ToolStripMenuItem видыТуровToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem операторыToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn tourpriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem продаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem расписаниеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem турыToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem возвратToolStripMenuItem;
+        private System.Windows.Forms.TextBox filterboxcl;
+        private System.Windows.Forms.TextBox filterboxtour;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox filterboxsotr;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem постыToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dtPickerSell2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
@@ -593,6 +723,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vidturanameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pitaniatipDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateofdispatch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn returndate;
         private System.Windows.Forms.DataGridViewTextBoxColumn departurecityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn finalprice;
@@ -604,22 +736,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idskidka;
         private System.Windows.Forms.DataGridViewTextBoxColumn idvidtura;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpitanie;
-        private System.Windows.Forms.ToolStripMenuItem продаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem расписаниеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem турыToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem возвратToolStripMenuItem;
-        private System.Windows.Forms.Button ClientSearch;
-        private System.Windows.Forms.TextBox filterboxcl;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox filterboxtour;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox filterboxsotr;
-        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem постыToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dtPickerSell1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
