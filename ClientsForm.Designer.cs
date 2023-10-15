@@ -32,15 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passportseriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passportnomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personaldataoftheclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ransomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -59,6 +50,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.filterbox = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
+            this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passportseriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passportnomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personaldataoftheclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -106,7 +106,7 @@
             this.passportnomerDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
             this.personaldataoftheclientDataGridViewTextBoxColumn,
-            this.ransomDataGridViewTextBoxColumn});
+            this.total_paid});
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -121,78 +121,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.button2_Click);
-            // 
-            // idclientDataGridViewTextBoxColumn
-            // 
-            this.idclientDataGridViewTextBoxColumn.DataPropertyName = "idclient";
-            this.idclientDataGridViewTextBoxColumn.HeaderText = "ИД";
-            this.idclientDataGridViewTextBoxColumn.Name = "idclientDataGridViewTextBoxColumn";
-            this.idclientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idclientDataGridViewTextBoxColumn.Width = 49;
-            // 
-            // fIODataGridViewTextBoxColumn
-            // 
-            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
-            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
-            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
-            this.fIODataGridViewTextBoxColumn.ReadOnly = true;
-            this.fIODataGridViewTextBoxColumn.Width = 96;
-            // 
-            // birthdateDataGridViewTextBoxColumn
-            // 
-            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.birthdateDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // documentsDataGridViewTextBoxColumn
-            // 
-            this.documentsDataGridViewTextBoxColumn.DataPropertyName = "documents";
-            this.documentsDataGridViewTextBoxColumn.HeaderText = "Документ";
-            this.documentsDataGridViewTextBoxColumn.Name = "documentsDataGridViewTextBoxColumn";
-            this.documentsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentsDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // passportseriaDataGridViewTextBoxColumn
-            // 
-            this.passportseriaDataGridViewTextBoxColumn.DataPropertyName = "passportseria";
-            this.passportseriaDataGridViewTextBoxColumn.HeaderText = "Серия";
-            this.passportseriaDataGridViewTextBoxColumn.Name = "passportseriaDataGridViewTextBoxColumn";
-            this.passportseriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.passportseriaDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // passportnomerDataGridViewTextBoxColumn
-            // 
-            this.passportnomerDataGridViewTextBoxColumn.DataPropertyName = "passportnomer";
-            this.passportnomerDataGridViewTextBoxColumn.HeaderText = "Номер";
-            this.passportnomerDataGridViewTextBoxColumn.Name = "passportnomerDataGridViewTextBoxColumn";
-            this.passportnomerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.passportnomerDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // personaldataoftheclientDataGridViewTextBoxColumn
-            // 
-            this.personaldataoftheclientDataGridViewTextBoxColumn.DataPropertyName = "personaldataoftheclient";
-            this.personaldataoftheclientDataGridViewTextBoxColumn.HeaderText = "Профиль";
-            this.personaldataoftheclientDataGridViewTextBoxColumn.Name = "personaldataoftheclientDataGridViewTextBoxColumn";
-            this.personaldataoftheclientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.personaldataoftheclientDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // ransomDataGridViewTextBoxColumn
-            // 
-            this.ransomDataGridViewTextBoxColumn.DataPropertyName = "ransom";
-            this.ransomDataGridViewTextBoxColumn.HeaderText = "Прибыль";
-            this.ransomDataGridViewTextBoxColumn.Name = "ransomDataGridViewTextBoxColumn";
-            this.ransomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ransomDataGridViewTextBoxColumn.Width = 78;
             // 
             // bindingSource1
             // 
@@ -358,6 +286,78 @@
             this.search.UseVisualStyleBackColor = false;
             this.search.Click += new System.EventHandler(this.button1_Click);
             // 
+            // idclientDataGridViewTextBoxColumn
+            // 
+            this.idclientDataGridViewTextBoxColumn.DataPropertyName = "idclient";
+            this.idclientDataGridViewTextBoxColumn.HeaderText = "ИД";
+            this.idclientDataGridViewTextBoxColumn.Name = "idclientDataGridViewTextBoxColumn";
+            this.idclientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclientDataGridViewTextBoxColumn.Width = 49;
+            // 
+            // fIODataGridViewTextBoxColumn
+            // 
+            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
+            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
+            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
+            this.fIODataGridViewTextBoxColumn.ReadOnly = true;
+            this.fIODataGridViewTextBoxColumn.Width = 96;
+            // 
+            // birthdateDataGridViewTextBoxColumn
+            // 
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthdateDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // documentsDataGridViewTextBoxColumn
+            // 
+            this.documentsDataGridViewTextBoxColumn.DataPropertyName = "documents";
+            this.documentsDataGridViewTextBoxColumn.HeaderText = "Документ";
+            this.documentsDataGridViewTextBoxColumn.Name = "documentsDataGridViewTextBoxColumn";
+            this.documentsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentsDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // passportseriaDataGridViewTextBoxColumn
+            // 
+            this.passportseriaDataGridViewTextBoxColumn.DataPropertyName = "passportseria";
+            this.passportseriaDataGridViewTextBoxColumn.HeaderText = "Серия";
+            this.passportseriaDataGridViewTextBoxColumn.Name = "passportseriaDataGridViewTextBoxColumn";
+            this.passportseriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passportseriaDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // passportnomerDataGridViewTextBoxColumn
+            // 
+            this.passportnomerDataGridViewTextBoxColumn.DataPropertyName = "passportnomer";
+            this.passportnomerDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.passportnomerDataGridViewTextBoxColumn.Name = "passportnomerDataGridViewTextBoxColumn";
+            this.passportnomerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passportnomerDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // personaldataoftheclientDataGridViewTextBoxColumn
+            // 
+            this.personaldataoftheclientDataGridViewTextBoxColumn.DataPropertyName = "personaldataoftheclient";
+            this.personaldataoftheclientDataGridViewTextBoxColumn.HeaderText = "Профиль";
+            this.personaldataoftheclientDataGridViewTextBoxColumn.Name = "personaldataoftheclientDataGridViewTextBoxColumn";
+            this.personaldataoftheclientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.personaldataoftheclientDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // total_paid
+            // 
+            this.total_paid.DataPropertyName = "total_paid";
+            this.total_paid.HeaderText = "Куплено на";
+            this.total_paid.Name = "total_paid";
+            this.total_paid.ReadOnly = true;
+            this.total_paid.Width = 82;
+            // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,14 +399,6 @@
         private AdvTimeDataSetTableAdapters.SelectToursbyClientTableAdapter selectToursbyClientTableAdapter;
         private System.Windows.Forms.Button addclientbutton;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idclientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passportseriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passportnomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personaldataoftheclientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ransomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
@@ -418,5 +410,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox filterbox;
         private System.Windows.Forms.Button search;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passportseriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passportnomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personaldataoftheclientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_paid;
     }
 }

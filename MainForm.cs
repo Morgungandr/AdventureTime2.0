@@ -149,10 +149,10 @@ namespace AdventureTime
             }
             filterParts.Add(string.Format(" dates >= '{0:dd.MM.yyyy}' AND dates <= '{1:dd.MM.yyyy}'"
                 , dtPickerSell1.Value.ToShortDateString(), dtPickerSell2.Value.ToShortDateString()));
-            filterParts.Add(string.Format(" dates >= '{0:dd.MM.yyyy}' AND dates <= '{1:dd.MM.yyyy}'"
-                , dtPickerSell1.Value.ToShortDateString(), dtPickerSell2.Value.ToShortDateString()));
-            filterParts.Add(string.Format(" dates >= '{0:dd.MM.yyyy}' AND dates <= '{1:dd.MM.yyyy}'"
-                , dtPickerSell1.Value.ToShortDateString(), dtPickerSell2.Value.ToShortDateString()));
+            filterParts.Add(string.Format(" dateofdispatch >= '{0:dd.MM.yyyy}' AND dateofdispatch <= '{1:dd.MM.yyyy}'"
+                , dtPickerdispatch1.Value.ToShortDateString(), dtPickerdispatch2.Value.ToShortDateString()));
+            filterParts.Add(string.Format(" returndate >= '{0:dd.MM.yyyy}' AND returndate <= '{1:dd.MM.yyyy}'"
+                , dtPickerreturn1.Value.ToShortDateString(), dtPickerreturn2.Value.ToShortDateString()));
             string filter = string.Join(" AND ", filterParts);
             this.salesViewBindingSource.Filter = filter;
 
