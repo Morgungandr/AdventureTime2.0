@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.newschedulebutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tournameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,8 @@
             this.operatornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.schedulefullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.advTimeDataSet2 = new AdventureTime.AdvTimeDataSet();
+            this.newschedulebutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.advTimeDataSet1 = new AdventureTime.AdvTimeDataSet();
             this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.scheduleTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.ScheduleTableAdapter();
@@ -88,30 +88,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(1144, 463);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // newschedulebutton
-            // 
-            this.newschedulebutton.Location = new System.Drawing.Point(0, 4);
-            this.newschedulebutton.Name = "newschedulebutton";
-            this.newschedulebutton.Size = new System.Drawing.Size(96, 26);
-            this.newschedulebutton.TabIndex = 1;
-            this.newschedulebutton.Text = "Новый";
-            this.newschedulebutton.UseVisualStyleBackColor = true;
-            this.newschedulebutton.Click += new System.EventHandler(this.newschedulebutton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(101, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 26);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Редактировать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -221,6 +201,26 @@
             // 
             this.advTimeDataSet2.DataSetName = "AdvTimeDataSet";
             this.advTimeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // newschedulebutton
+            // 
+            this.newschedulebutton.Location = new System.Drawing.Point(0, 4);
+            this.newschedulebutton.Name = "newschedulebutton";
+            this.newschedulebutton.Size = new System.Drawing.Size(96, 26);
+            this.newschedulebutton.TabIndex = 1;
+            this.newschedulebutton.Text = "Новый";
+            this.newschedulebutton.UseVisualStyleBackColor = true;
+            this.newschedulebutton.Click += new System.EventHandler(this.newschedulebutton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(101, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 26);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Редактировать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // advTimeDataSet1
             // 

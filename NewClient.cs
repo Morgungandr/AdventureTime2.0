@@ -51,7 +51,7 @@ namespace AdventureTime
                             , doc.Text
                             , tel.Text
                             , inf.Text
-                            , Convert.ToInt64(sum.Text));
+                            , Convert.ToInt64("0"));
             }
             else { 
                 this.clientTableAdapter1.EditClient(Convert.ToInt32(labelid.Text)
@@ -62,7 +62,7 @@ namespace AdventureTime
                             , doc.Text
                             , tel.Text
                             , inf.Text
-                            , Convert.ToDecimal(sum.Text));
+                            , Convert.ToDecimal("0"));
             }
             this.Close();
           

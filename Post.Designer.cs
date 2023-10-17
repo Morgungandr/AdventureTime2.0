@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Post));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
-            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.postTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.PostTableAdapter();
             this.idpostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.advTimeDataSet = new AdventureTime.AdvTimeDataSet();
+            this.postTableAdapter = new AdventureTime.AdvTimeDataSetTableAdapters.PostTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -64,20 +64,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(535, 321);
             this.dataGridView1.TabIndex = 0;
             // 
-            // advTimeDataSet
-            // 
-            this.advTimeDataSet.DataSetName = "AdvTimeDataSet";
-            this.advTimeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // postBindingSource
-            // 
-            this.postBindingSource.DataMember = "Post";
-            this.postBindingSource.DataSource = this.advTimeDataSet;
-            // 
-            // postTableAdapter
-            // 
-            this.postTableAdapter.ClearBeforeFill = true;
-            // 
             // idpostDataGridViewTextBoxColumn
             // 
             this.idpostDataGridViewTextBoxColumn.DataPropertyName = "idpost";
@@ -98,6 +84,20 @@
             this.salaryDataGridViewTextBoxColumn.HeaderText = "Зп";
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
             this.salaryDataGridViewTextBoxColumn.Width = 45;
+            // 
+            // postBindingSource
+            // 
+            this.postBindingSource.DataMember = "Post";
+            this.postBindingSource.DataSource = this.advTimeDataSet;
+            // 
+            // advTimeDataSet
+            // 
+            this.advTimeDataSet.DataSetName = "AdvTimeDataSet";
+            this.advTimeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // postTableAdapter
+            // 
+            this.postTableAdapter.ClearBeforeFill = true;
             // 
             // bindingNavigator1
             // 
@@ -135,11 +135,11 @@
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Post";
-            this.Text = "Post";
+            this.Text = "Должности";
             this.Load += new System.EventHandler(this.Post_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advTimeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
